@@ -2,13 +2,12 @@
 import React, { useState } from 'react';
 import { auth } from "../../services/firebase.js";
 import { signInWithEmailAndPassword } from 'firebase/auth';
-// import AlertMessages from '../AlertMessages/AlertMessages.jsx';
-
+import AlertMessages from '../AlertMessages/AlertMessages.jsx';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  // const [alertMessage, setAlertMessage] = useState(null);
+  const [alertMessage, setAlertMessage] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -17,18 +16,34 @@ const LoginForm = () => {
       const userCredentials = await signInWithEmailAndPassword(auth, email, password)
       console.log(userCredentials)
       console.log("inicio de sesion correctamente")
+
+      //Redirigir
+
     } catch (error) {
 
-      if (error.code === 'auth/invalid-email') {
-        alert("Email invalido")
-      } else if (error.code === 'auth/missing-password') {
-         alert("Missing password")
-      } else if (error.code === 'auth/invalid-credential') {
-         alert("Credenciales incorrectas")
-       }else{
-        alert("Error interno")
-        console.log(error.code)
-       }
+      let message;
+      let type;
+      
+      switch (error.code) {
+        case 'auth/invalid-email':
+          message = "Correo inválido";
+          type = "danger";
+          break;
+        case 'auth/missing-password':
+          message = "Falta la contraseña";
+          type = "danger";
+          break;
+        case 'auth/invalid-credential':
+          message = "Credenciales incorrectas";
+          type = "danger";
+          break;
+        default:
+          message = "Error interno";
+          type = "danger";
+          break;
+      }
+
+      setAlertMessage({ type, message});
        
     }
 
@@ -38,7 +53,7 @@ const LoginForm = () => {
 
     <div>
 
-      {/* {alertMessage && <AlertMessages type={alertMessage.type} message={alertMessage.message} />} */}
+{alertMessage && <AlertMessages type={alertMessage.type} message={alertMessage.message} />}
 
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
