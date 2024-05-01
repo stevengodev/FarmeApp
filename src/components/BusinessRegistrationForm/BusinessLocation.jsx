@@ -19,7 +19,7 @@ const BusinessLocation = () => {
         />
       </div>
       <div className="mb-3">
-        <label htmlFor="businessDescription" className="form-label">Descripción:</label>
+        <label htmlFor="businessDescription" className="form-label">:</label>
         <textarea
           className="form-control"
           id="businessDescription"
