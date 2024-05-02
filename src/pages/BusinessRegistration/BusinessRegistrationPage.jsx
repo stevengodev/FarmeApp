@@ -1,7 +1,6 @@
 import React from 'react';
-import BusinessInfo from './BusinessInfo';
-import ContactInfo from './ContactInfo';
-import BusinessLocation from './BusinessLocation';
+import BusinessInfo from '../../components/BusinessRegistrationForm/BusinessInfo';
+import OwnerInfo from '../../components/BusinessRegistrationForm/OwnerInfo';
 
 const BusinessRegistrationPage = () => {
   const handleSubmit = (e) => {
@@ -17,8 +16,7 @@ const BusinessRegistrationPage = () => {
           <h2 className="card-title">Registro de Negocio</h2>
           <form onSubmit={handleSubmit}>
             <BusinessInfo />
-            <ContactInfo />
-            <BusinessLocation />
+            <OwnerInfo />
             <button type='submit' className="btn btn-primary">Registrar negocio</button>
           </form>
         </div>

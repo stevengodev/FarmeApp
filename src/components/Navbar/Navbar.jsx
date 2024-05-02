@@ -27,7 +27,12 @@ const Navbar = () => {
               </li>
 
               <li className="nav-item">
-                <Link className="nav-link" to="/form-product">Formulario de productos</Link>
+                <Link className="nav-link" to="/staff-registration">Registro de personal</Link>
+              </li>
+
+              
+              <li className="nav-item">
+                <Link className="nav-link" to="/task-registration">Registro de tareas</Link>
               </li>
 
             </ul>

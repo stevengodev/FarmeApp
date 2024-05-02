@@ -3,13 +3,13 @@ import React, { useState } from 'react';
 
 const BusinessInfo = () => {
   const [businessName, setBusinessName] = useState('');
-  const [businessDescription, setBusinessDescription] = useState('');
+  const [businessLocation, setBusinessLocation] = useState('');
 
   return (
     <div>
-      <h3>Información del Negocio</h3>
+      <h4>Información del Negocio</h4>
       <div className="mb-3">
-        <label htmlFor="businessName" className="form-label">Nombre del Negocio:</label>
+        <label className="form-label">Nombre del Negocio:</label>
         <input
           type="text"
           className="form-control"
@@ -19,13 +19,14 @@ const BusinessInfo = () => {
         />
       </div>
       <div className="mb-3">
-        <label htmlFor="businessDescription" className="form-label">Descripción:</label>
-        <textarea
+        <label className="form-label">Direccion / ubicacion:</label>
+        <input
+          type='text'
           className="form-control"
-          id="businessDescription"
-          value={businessDescription}
-          onChange={(e) => setBusinessDescription(e.target.value)}
-        ></textarea>
+          id="businessLocation"
+          value={businessLocation}
+          onChange={(e) => setBusinessLocation(e.target.value)}
+        ></input>
       </div>
     </div>
   );
