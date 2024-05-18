@@ -1,0 +1,85 @@
+{
+    "tareas": [
+      {
+        "id": 1,
+        "titulo": "Comprar comestibles",
+        "descripcion": "Comprar leche, pan, queso y frutas",
+        "fecha_vencimiento": "2024-05-20",
+        "estado": "pendiente",
+        "empleado": "Juan Pérez"
+      },
+      {
+        "id": 2,
+        "titulo": "Lavar el coche",
+        "descripcion": "Lavar el coche y limpiar el interior",
+        "fecha_vencimiento": "2024-05-22",
+        "estado": "completado",
+        "empleado": "Ana López"
+      },
+      {
+        "id": 3,
+        "titulo": "Enviar correo",
+        "descripcion": "Enviar el correo al departamento de recursos humanos",
+        "fecha_vencimiento": "2024-05-21",
+        "estado": "pendiente",
+        "empleado": "Carlos Gómez"
+      },
+      {
+        "id": 4,
+        "titulo": "Reunión de equipo",
+        "descripcion": "Reunión semanal de actualización de proyectos",
+        "fecha_vencimiento": "2024-05-23",
+        "estado": "pendiente",
+        "empleado": "Laura Martínez"
+      },
+      {
+        "id": 5,
+        "titulo": "Ejercicio",
+        "descripcion": "Hacer ejercicio durante 30 minutos",
+        "fecha_vencimiento": "2024-05-20",
+        "estado": "completado",
+        "empleado": "Miguel Torres"
+      },
+      {
+        "id": 6,
+        "titulo": "Leer un libro",
+        "descripcion": "Leer al menos 50 páginas del libro actual",
+        "fecha_vencimiento": "2024-05-24",
+        "estado": "pendiente",
+        "empleado": "Sofía Reyes"
+      },
+      {
+        "id": 7,
+        "titulo": "Pagar facturas",
+        "descripcion": "Pagar la factura de electricidad y agua",
+        "fecha_vencimiento": "2024-05-25",
+        "estado": "pendiente",
+        "empleado": "David Fernández"
+      },
+      {
+        "id": 8,
+        "titulo": "Planificar vacaciones",
+        "descripcion": "Investigar y planificar las vacaciones de verano",
+        "fecha_vencimiento": "2024-05-30",
+        "estado": "pendiente",
+        "empleado": "Lucía Romero"
+      },
+      {
+        "id": 9,
+        "titulo": "Cita médica",
+        "descripcion": "Cita con el dentista para revisión anual",
+        "fecha_vencimiento": "2024-05-27",
+        "estado": "pendiente",
+        "empleado": "Fernando García"
+      },
+      {
+        "id": 10,
+        "titulo": "Actualizar CV",
+        "descripcion": "Actualizar el currículum vitae con la experiencia más reciente",
+        "fecha_vencimiento": "2024-05-28",
+        "estado": "pendiente",
+        "empleado": "María Sánchez"
+      }
+    ]
+  }
+  

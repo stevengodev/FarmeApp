@@ -1,0 +1,75 @@
+{
+    "productos": [
+      {
+        "id": 1,
+        "nombre": "Camiseta",
+        "descripcion": "Camiseta de algodón 100% para hombre",
+        "precio": 15.99,
+        "categoria": "Ropa"
+      },
+      {
+        "id": 2,
+        "nombre": "Pantalones",
+        "descripcion": "Pantalones vaqueros azul oscuro",
+        "precio": 39.99,
+        "categoria": "Ropa"
+      },
+      {
+        "id": 3,
+        "nombre": "Zapatos Deportivos",
+        "descripcion": "Zapatos deportivos para correr",
+        "precio": 49.99,
+        "categoria": "Calzado"
+      },
+      {
+        "id": 4,
+        "nombre": "Mochila",
+        "descripcion": "Mochila resistente al agua para laptop",
+        "precio": 29.99,
+        "categoria": "Accesorios"
+      },
+      {
+        "id": 5,
+        "nombre": "Reloj de Pulsera",
+        "descripcion": "Reloj de pulsera con correa de cuero",
+        "precio": 89.99,
+        "categoria": "Accesorios"
+      },
+      {
+        "id": 6,
+        "nombre": "Auriculares",
+        "descripcion": "Auriculares inalámbricos con cancelación de ruido",
+        "precio": 199.99,
+        "categoria": "Electrónica"
+      },
+      {
+        "id": 7,
+        "nombre": "Smartphone",
+        "descripcion": "Smartphone con pantalla de 6.5 pulgadas y 128GB de almacenamiento",
+        "precio": 599.99,
+        "categoria": "Electrónica"
+      },
+      {
+        "id": 8,
+        "nombre": "Tablet",
+        "descripcion": "Tablet de 10 pulgadas con 64GB de almacenamiento",
+        "precio": 299.99,
+        "categoria": "Electrónica"
+      },
+      {
+        "id": 9,
+        "nombre": "Cafetera",
+        "descripcion": "Cafetera de goteo con temporizador programable",
+        "precio": 49.99,
+        "categoria": "Hogar"
+      },
+      {
+        "id": 10,
+        "nombre": "Lámpara de Escritorio",
+        "descripcion": "Lámpara de escritorio LED con ajuste de brillo",
+        "precio": 24.99,
+        "categoria": "Hogar"
+      }
+    ]
+  }
+  
