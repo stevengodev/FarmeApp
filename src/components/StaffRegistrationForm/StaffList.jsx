@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import dataStaff from '../../data/empleados.json'
 
-console.log(dataStaff.tareas)
-
 // const tareasArray = dataStaff.tareas
 // console.log(tareasArray)
 

@@ -21,7 +21,6 @@ const RegistrationForm = () => {
 
       //Redirigir
 
-
     } catch (error) {
 
       let message;

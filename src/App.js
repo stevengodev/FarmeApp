@@ -11,9 +11,11 @@ import ProductListPage from './pages/ProductRegistration/ProductListPage';
 import TaskListPage from './pages/TaskRegistration/TaskListPage';
 import StaffListPage from './pages/StaffRegistration/StaffListPage';
 import BusinessInfoPage from './pages/BusinessRegistration/BusinessInfoPage';
+import Store from './pages/Store/Store';
 
 
 function App() {
+
   return (
     <>
     <Router>
@@ -27,6 +29,8 @@ function App() {
         <Route path='/task-list' element={ <TaskListPage/> } />
         <Route path='/employee-list' element={ <StaffListPage/> } />
         <Route path='/businessInfo-list' element={ <BusinessInfoPage/> } />
+        <Route path='/tienda' element={ <Store/> } />
+
       </Routes>
     </Router>
 
