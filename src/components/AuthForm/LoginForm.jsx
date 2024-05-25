@@ -3,11 +3,16 @@ import React, { useState } from 'react';
 import { auth } from "../../services/firebase.js";
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import AlertMessages from '../AlertMessages/AlertMessages.jsx';
+import { useNavigate } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [alertMessage, setAlertMessage] = useState(null);
+
+  const navigate = useNavigate();
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -18,6 +23,9 @@ const LoginForm = () => {
       console.log("inicio de sesion correctamente")
 
       //Redirigir
+
+      navigate('/businessInfo-list'); // Redirige al usuario a la página de inicio
+
 
     } catch (error) {
 

@@ -25,6 +25,7 @@ const TaskList = () => {
                     <th >Fecha vencimiento</th>
                     <th >Estado</th>
                     <th >Empleado</th>
+                    <th >Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -36,7 +37,10 @@ const TaskList = () => {
             <td>{tarea.fecha_vencimiento}</td>            
             <td>{tarea.estado}</td>
             <td>{tarea.empleado}</td>
-
+            <td colSpan="2" className="text-end">
+                <button className="btn btn-primary me-2">Editar</button>
+                <button className="btn btn-danger">Eliminar</button>
+              </td>
           </tr>
         ))}
             </tbody>

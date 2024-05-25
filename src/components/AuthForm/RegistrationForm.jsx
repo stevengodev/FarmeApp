@@ -3,11 +3,17 @@ import React, { useState } from 'react';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from "../../services/firebase.js";
 import AlertMessages from '../AlertMessages/AlertMessages.jsx';
+import { useNavigate } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const RegistrationForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [alertMessage, setAlertMessage] = useState(null);
+
+  // Usa useNavigate para obtener la función de navegación
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -18,9 +24,9 @@ const RegistrationForm = () => {
       console.log(userCredential)
       alert("Usuario creado correctamente")
 
-
       //Redirigir
 
+      // Redirigir a la página deseada después del registro exitoso
     } catch (error) {
 
       let message;

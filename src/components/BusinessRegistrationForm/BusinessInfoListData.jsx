@@ -1,23 +1,52 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const BusinessInfoListData = () => {
 
   return (
-
-    <div className="row">
+    <div className='container' >
+      <div className="row">
         <div className="col-md-4">
-          <div className="card mb-4">
-            <div className="card-body">
-              <h5 className="card-title">Nombre: Las Canarias</h5>
-              <p className="card-text">Ubicacion: Sucre</p>
-              <p className="card-text">Numero de identificacion: 1111111111</p>
-              <p className="card-text">Nombre: Steven David</p>
-              <p className="card-text">Apellido: Gomez Foliaco</p>
-              <p className="card-text">Telefono: 3218128910</p>
-              <p className="card-text">Fecha de nacimiento: 10/10/1992</p>
-            </div>
-          </div>
+          <table className="table">
+            <tbody>
+              <tr>
+                <th>Nombre:</th>
+                <td>Las Canarias</td>
+              </tr>
+              <tr>
+                <th>Ubicacion:</th>
+                <td>Sucre</td>
+              </tr>
+              <tr>
+                <th>Numero de identificacion:</th>
+                <td>1111111111</td>
+              </tr>
+              <tr>
+                <th>Nombre:</th>
+                <td>Steven David</td>
+              </tr>
+              <tr>
+                <th>Apellido:</th>
+                <td>Gomez Foliaco</td>
+              </tr>
+              <tr>
+                <th>Telefono:</th>
+                <td>3218128910</td>
+              </tr>
+              <tr>
+                <th>Fecha de nacimiento:</th>
+                <td>10/10/1992</td>
+              </tr>
+              <tr>
+                <td colSpan="2" className="text-end">
+                  <button className="btn btn-primary me-2">Editar</button>
+                  <button className="btn btn-danger">Eliminar</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+      </div>
     </div>
 
   );

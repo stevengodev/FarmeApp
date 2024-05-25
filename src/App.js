@@ -12,6 +12,7 @@ import TaskListPage from './pages/TaskRegistration/TaskListPage';
 import StaffListPage from './pages/StaffRegistration/StaffListPage';
 import BusinessInfoPage from './pages/BusinessRegistration/BusinessInfoPage';
 import Store from './pages/Store/Store';
+import ProductRegistration from './pages/ProductRegistration/ProductRegistration';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
         <Route path='/employee-list' element={ <StaffListPage/> } />
         <Route path='/businessInfo-list' element={ <BusinessInfoPage/> } />
         <Route path='/tienda' element={ <Store/> } />
+        <Route path='/product-create' element={ <ProductRegistration/> } />
 
       </Routes>
     </Router>

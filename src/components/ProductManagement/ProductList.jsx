@@ -23,6 +23,7 @@ const ProductList = () => {
                     <th >Nombre</th>
                     <th >Descripcion</th>
                     <th >Precio</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -32,6 +33,10 @@ const ProductList = () => {
             <td>{product.nombre}</td>
             <td>{product.descripcion}</td>
             <td>{product.precio}</td>
+            <td colSpan="2" className="text-end">
+                <button className="btn btn-primary me-2">Editar</button>
+                <button className="btn btn-danger">Eliminar</button>
+              </td>
           </tr>
         ))}
             </tbody>
