@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/FarmeApp/static/css/main.06628529.css",
+    "main.js": "/FarmeApp/static/js/main.1fd3f706.js",
+    "static/media/back5.jpg": "/FarmeApp/static/media/back5.b75eda4f79998f0994de.jpg",
+    "static/media/vaca2.jpg": "/FarmeApp/static/media/vaca2.2752f6dae6408616db17.jpg",
+    "static/media/vaca3.jpg": "/FarmeApp/static/media/vaca3.4fceccc04b78b2fda865.jpg",
+    "static/media/mon.jpg": "/FarmeApp/static/media/mon.5ff0e6a987b92c75ffe9.jpg",
+    "static/media/vaca1.jpg": "/FarmeApp/static/media/vaca1.a5e003daec7cec96fab2.jpg",
+    "static/media/back.jpg": "/FarmeApp/static/media/back.610913e8ae07ea15d9f8.jpg",
+    "static/media/logo2.png": "/FarmeApp/static/media/logo2.14a813e5e8b389cd70e9.png",
+    "index.html": "/FarmeApp/index.html",
+    "main.06628529.css.map": "/FarmeApp/static/css/main.06628529.css.map",
+    "main.1fd3f706.js.map": "/FarmeApp/static/js/main.1fd3f706.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.06628529.css",
+    "static/js/main.1fd3f706.js"
+  ]
+}
