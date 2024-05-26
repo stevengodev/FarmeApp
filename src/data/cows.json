@@ -1,0 +1,35 @@
+{
+    "cows": [
+      {
+        "Id": 1,
+        "Name": "Cow 1",
+        "Photo": "cow1.jpg",
+        "DateBirth": "2022-01-01",
+        "Farm_Id": "farm1",
+        "IsDeleted": false,
+        "Breed_Id": 1,
+        "Description": "This is Cow 1 from farm1"
+      },
+      {
+        "Id": 2,
+        "Name": "Cow 2",
+        "Photo": "cow2.jpg",
+        "DateBirth": "2022-02-02",
+        "Farm_Id": "farm2",
+        "IsDeleted": false,
+        "Breed_Id": 2,
+        "Description": "This is Cow 2 from farm2"
+      },
+      {
+        "Id": 3,
+        "Name": "Cow 3",
+        "Photo": "cow3.jpg",
+        "DateBirth": "2022-03-03",
+        "Farm_Id": "farm1",
+        "IsDeleted": true,
+        "Breed_Id": 1,
+        "Description": "This is Cow 3 from farm1"
+      }
+    ]
+  }
+  

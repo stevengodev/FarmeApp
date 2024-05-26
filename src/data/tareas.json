@@ -1,85 +1,67 @@
 {
-    "tareas": [
-      {
-        "id": 1,
-        "titulo": "Comprar comestibles",
-        "descripcion": "Comprar leche, pan, queso y frutas",
-        "fecha_vencimiento": "2024-05-20",
-        "estado": "pendiente",
-        "empleado": "Juan Pérez"
-      },
-      {
-        "id": 2,
-        "titulo": "Lavar el coche",
-        "descripcion": "Lavar el coche y limpiar el interior",
-        "fecha_vencimiento": "2024-05-22",
-        "estado": "completado",
-        "empleado": "Ana López"
-      },
-      {
-        "id": 3,
-        "titulo": "Enviar correo",
-        "descripcion": "Enviar el correo al departamento de recursos humanos",
-        "fecha_vencimiento": "2024-05-21",
-        "estado": "pendiente",
-        "empleado": "Carlos Gómez"
-      },
-      {
-        "id": 4,
-        "titulo": "Reunión de equipo",
-        "descripcion": "Reunión semanal de actualización de proyectos",
-        "fecha_vencimiento": "2024-05-23",
-        "estado": "pendiente",
-        "empleado": "Laura Martínez"
-      },
-      {
-        "id": 5,
-        "titulo": "Ejercicio",
-        "descripcion": "Hacer ejercicio durante 30 minutos",
-        "fecha_vencimiento": "2024-05-20",
-        "estado": "completado",
-        "empleado": "Miguel Torres"
-      },
-      {
-        "id": 6,
-        "titulo": "Leer un libro",
-        "descripcion": "Leer al menos 50 páginas del libro actual",
-        "fecha_vencimiento": "2024-05-24",
-        "estado": "pendiente",
-        "empleado": "Sofía Reyes"
-      },
-      {
-        "id": 7,
-        "titulo": "Pagar facturas",
-        "descripcion": "Pagar la factura de electricidad y agua",
-        "fecha_vencimiento": "2024-05-25",
-        "estado": "pendiente",
-        "empleado": "David Fernández"
-      },
-      {
-        "id": 8,
-        "titulo": "Planificar vacaciones",
-        "descripcion": "Investigar y planificar las vacaciones de verano",
-        "fecha_vencimiento": "2024-05-30",
-        "estado": "pendiente",
-        "empleado": "Lucía Romero"
-      },
-      {
-        "id": 9,
-        "titulo": "Cita médica",
-        "descripcion": "Cita con el dentista para revisión anual",
-        "fecha_vencimiento": "2024-05-27",
-        "estado": "pendiente",
-        "empleado": "Fernando García"
-      },
-      {
-        "id": 10,
-        "titulo": "Actualizar CV",
-        "descripcion": "Actualizar el currículum vitae con la experiencia más reciente",
-        "fecha_vencimiento": "2024-05-28",
-        "estado": "pendiente",
-        "empleado": "María Sánchez"
-      }
-    ]
-  }
-  
+  "tareas": [
+    {
+      "id": 1,
+      "titulo": "Limpiar las vacas",
+      "descripcion": "Limpiar y cepillar las vacas en el corral.",
+      "fecha_vencimiento": "2024-05-20",
+      "estado": "pendiente",
+      "empleado": "Juan Pérez",
+      "finca": "Finca La Esperanza"
+    },
+    {
+      "id": 2,
+      "titulo": "Contar las vacas",
+      "descripcion": "Realizar un censo de todas las vacas en la finca.",
+      "fecha_vencimiento": "2024-05-22",
+      "estado": "completado",
+      "empleado": "Ana López",
+      "finca": "Finca El Retiro"
+    },
+    {
+      "id": 3,
+      "titulo": "Vacunar ganado",
+      "descripcion": "Administrar vacunas a todo el ganado en el corral.",
+      "fecha_vencimiento": "2024-05-21",
+      "estado": "pendiente",
+      "empleado": "Carlos Gómez",
+      "finca": "Finca San José"
+    },
+    {
+      "id": 4,
+      "titulo": "Reparar cercas",
+      "descripcion": "Reparar las cercas dañadas en el perímetro de la finca.",
+      "fecha_vencimiento": "2024-05-23",
+      "estado": "pendiente",
+      "empleado": "Laura Martínez",
+      "finca": "Finca Los Pinos"
+    },
+    {
+      "id": 5,
+      "titulo": "Alimentar terneros",
+      "descripcion": "Proporcionar alimento y agua a los terneros en el establo.",
+      "fecha_vencimiento": "2024-05-20",
+      "estado": "completado",
+      "empleado": "Miguel Torres",
+      "finca": "Finca La Esperanza"
+    },
+    {
+      "id": 6,
+      "titulo": "Podar árboles",
+      "descripcion": "Podar árboles alrededor de los pastizales de la finca.",
+      "fecha_vencimiento": "2024-05-24",
+      "estado": "pendiente",
+      "empleado": "Sofía Reyes",
+      "finca": "Finca San José"
+    },
+    {
+      "id": 7,
+      "titulo": "Marcar ganado",
+      "descripcion": "Marcar con identificaciones a todo el ganado en la finca.",
+      "fecha_vencimiento": "2024-05-25",
+      "estado": "pendiente",
+      "empleado": "David Fernández",
+      "finca": "Finca El Retiro"
+    }
+  ]
+}

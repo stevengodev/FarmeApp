@@ -1,37 +1,35 @@
-// LoginForm.js
 import React, { useState } from 'react';
 import { auth } from "../../services/firebase.js";
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import AlertMessages from '../AlertMessages/AlertMessages.jsx';
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../../assets/styles/login.css';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [alertMessage, setAlertMessage] = useState(null);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const navigate = useNavigate();
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const userCredentials = await signInWithEmailAndPassword(auth, email, password)
-      console.log(userCredentials)
-      console.log("inicio de sesion correctamente")
+      const userCredentials = await signInWithEmailAndPassword(auth, email, password);
+      console.log(userCredentials);
+      console.log("Inicio de sesión correctamente");
 
-      //Redirigir
+      const userId = userCredentials.user.uid;
 
-      navigate('/businessInfo-list'); // Redirige al usuario a la página de inicio
-
+      navigate(`/businessInfo-list/${userId}`);
 
     } catch (error) {
-
       let message;
       let type;
-      
+
       switch (error.code) {
         case 'auth/invalid-email':
           message = "Correo inválido";
@@ -51,21 +49,16 @@ const LoginForm = () => {
           break;
       }
 
-      setAlertMessage({ type, message});
-       
+      setAlertMessage({ type, message });
     }
-
   };
 
   return (
-
-    <div>
-
-{alertMessage && <AlertMessages type={alertMessage.type} message={alertMessage.message} />}
-
+    <div className={isDarkMode ? 'dark-mode' : ''}>
+      
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
-          <label htmlFor="email" className="form-label">Correo electronico:</label>
+          <label htmlFor="email" className="form-label">Correo electrónico:</label>
           <input
             type="email"
             className="form-control"

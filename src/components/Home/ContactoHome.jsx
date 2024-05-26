@@ -6,11 +6,11 @@ const ContactoHome = () => {
     return (
         <>
             
-            <section class="blogs">
+            <section class="blogs" id="contacto">
                 <div class="contenedor contenido-contacto">
                     <h3>"Encuentra tu verdadera Pasion"</h3>
                     <p>Llena este formulario y un asesor se pondra en contacto con tigo a la brevedad.</p>
-                    <a href="#" class="botones boton-amarillo">Contactanos</a>
+                    <a href="/contact" class="botones boton-amarillo">Contactanos</a>
                 </div>
             </section>
         </>

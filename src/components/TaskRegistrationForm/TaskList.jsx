@@ -1,50 +1,34 @@
 import React, { useState, useEffect } from 'react';
-import dataTareas from '../../data/tareas.json'
-
-console.log(dataTareas.tareas)
-
-const tareasArray = dataTareas.tareas
-console.log(tareasArray)
+import dataTareas from '../../data/tareas.json';
+import '../../assets/styles/TaskList.css'; // Importamos el archivo de estilos CSS
 
 const TaskList = () => {
-
     const [tareas, setTareas] = useState([]);
 
     useEffect(() => {
-        // Simula una carga de datos
+        // Simulamos una carga de datos
         setTareas(dataTareas.tareas);
-      }, []);
+    }, []);
 
     return (
-        <table className="table">
-            <thead>
-                <tr>
-                    <th >ID</th>
-                    <th >Titulo</th>
-                    <th >Descripcion</th>
-                    <th >Fecha vencimiento</th>
-                    <th >Estado</th>
-                    <th >Empleado</th>
-                    <th >Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
+        <div className="note-container"> {/* Contenedor de las notas */}
             {tareas.map(tarea => (
-          <tr key={tarea.id}>
-            <td>{tarea.id}</td>
-            <td>{tarea.titulo}</td>
-            <td>{tarea.descripcion}</td>
-            <td>{tarea.fecha_vencimiento}</td>            
-            <td>{tarea.estado}</td>
-            <td>{tarea.empleado}</td>
-            <td colSpan="2" className="text-end">
-                <button className="btn btn-primary me-2">Editar</button>
-                <button className="btn btn-danger">Eliminar</button>
-              </td>
-          </tr>
-        ))}
-            </tbody>
-        </table>
+                <div key={tarea.id} className="note">
+                    <div className="note-header">
+                        <span className="note-title">{tarea.titulo}</span>
+                        <button className="btn-close">×</button>
+                    </div>
+                    <div className="note-body">
+                        <p>{tarea.descripcion}</p>
+                        <div className="note-meta">
+                            <span className="due-date">Fecha de vencimiento: {tarea.fecha_vencimiento}</span>
+                            <span className={`status ${tarea.estado}`}>{tarea.estado}</span>
+                        </div>
+                        <span className="assigned-to">Empleado: {tarea.empleado}</span>
+                    </div>
+                </div>
+            ))}
+        </div>
     );
 };
 
