@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import LoginForm from './LoginForm';
 import RegistrationForm from './RegistrationForm';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../../assets/styles/global.css';
 
 const AuthForm = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -21,7 +22,7 @@ const AuthForm = () => {
             {isLogin
               ? "¿No tienes una cuenta? Regístrate "
               : "¿Ya tienes una cuenta? Inicia sesión "}
-            <button className="btn btn-link p-0" onClick={toggleForm}>
+            <button className="btn btn-link p-0 registrarse" onClick={toggleForm}>
               {isLogin ? 'aquí' : 'aquí'}
             </button>
           </p>

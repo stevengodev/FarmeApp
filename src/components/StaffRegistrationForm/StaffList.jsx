@@ -35,9 +35,9 @@ const StaffList = () => {
                         <td>{empleado.fecha_inicio}</td>
                         <td>{empleado.username}</td>
                         <td>{empleado.password}</td>
-                        <td colSpan="2" className="text-end">
-                <button className="btn btn-primary me-2">Editar</button>
-                <button className="btn btn-danger">Eliminar</button>
+                        <td>
+                <button className="btn btn-primary me-2 editar"  >Editar</button>
+                <button className="btn btn-danger eliminar">Eliminar</button>
               </td>
                     </tr>
                 ))}

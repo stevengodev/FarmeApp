@@ -33,9 +33,9 @@ const ProductList = () => {
             <td>{product.nombre}</td>
             <td>{product.descripcion}</td>
             <td>{product.precio}</td>
-            <td colSpan="2" className="text-end">
-                <button className="btn btn-primary me-2">Editar</button>
-                <button className="btn btn-danger">Eliminar</button>
+            <td>
+                <button className="btn btn-primary me-2 editar">Editar</button>
+                <button className="btn btn-danger eliminar">Eliminar</button>
               </td>
           </tr>
         ))}

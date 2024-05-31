@@ -1,0 +1,43 @@
+.form-control, .form-select{
+    font-size: 15px;
+    line-height: 2;
+}
+
+.registrarse{
+    font-size: 20px;
+}
+
+.editar, .eliminar{
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.editar{
+    background-color: #007bff;
+}
+
+.eliminar{
+    background-color: #dc3545; /* Rojo */
+}
+
+button[type="submit"], .btn-emparejamiento {
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }

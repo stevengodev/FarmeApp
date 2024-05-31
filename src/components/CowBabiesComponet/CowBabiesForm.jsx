@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Form, Table } from 'react-bootstrap';
+import '../../assets/styles/global.css'
 
 const CowBabiesForm = () => {
   const [matingRecords, setMatingRecords] = useState([]);
@@ -106,9 +107,11 @@ const CowBabiesForm = () => {
             onChange={handleChange}
           />
         </Form.Group>
-        <Button variant="primary" onClick={handleAddRecord}>
+
+        <Button variant="primary" className='btn-emparejamiento' onClick={handleAddRecord}>
           Agregar Emparejamiento
         </Button>
+
       </Form>
       <Table striped bordered hover>
         <thead>
