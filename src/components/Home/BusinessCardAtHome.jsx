@@ -14,9 +14,6 @@ const BusinessCardAtHome = () => {
 
                 <div class="contenedor-anuncios">
                     <div class="anuncio">
-
-
-
                         <div class="contenido-anuncio">
                             <img src={vaca1} height={300} alt="anuncio1"></img>
                             <h3>Las margaritas</h3>

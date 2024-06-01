@@ -19,6 +19,7 @@ import CowBabiesPage from './pages/CowBabies/CowBabiesPage';
 
 import ContactPage from './pages/ContactPage/ContactPage'
 import Preferences from './pages/UserPreferences/Preferences';
+import FarmsListPage from './pages/Farms/FarmsListPage';
 function App() {
 
   return (
@@ -42,6 +43,7 @@ function App() {
         <Route path='/tienda' element={ <Store/> } />
         <Route path='/product-create' element={ <ProductRegistration/> } />
         <Route path='/preferences' element={ <Preferences/> } />
+        <Route path='/farms-list' element={ <FarmsListPage/> } />
 
       </Routes>
     </Router>
