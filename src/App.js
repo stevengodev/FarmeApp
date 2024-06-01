@@ -18,6 +18,7 @@ import BullPage from './pages/BullPages/BullPage'
 import CowBabiesPage from './pages/CowBabies/CowBabiesPage';
 
 import ContactPage from './pages/ContactPage/ContactPage'
+import Preferences from './pages/UserPreferences/Preferences';
 function App() {
 
   return (
@@ -40,6 +41,7 @@ function App() {
 
         <Route path='/tienda' element={ <Store/> } />
         <Route path='/product-create' element={ <ProductRegistration/> } />
+        <Route path='/preferences' element={ <Preferences/> } />
 
       </Routes>
     </Router>
