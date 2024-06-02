@@ -1,6 +1,7 @@
 import StaffList from "../../components/StaffRegistrationForm/StaffList";
 import { useNavigate } from 'react-router-dom';
-import NavbarHome from '../../components/Home/NavBarHome';
+import FormBulls from "../../components/BullComponet/FormBulls";
+import BusinessBar  from '../../components/BuisnessBar/Buisnessbar';
 
 const BullPage = () => {
 
@@ -13,7 +14,8 @@ const BullPage = () => {
     return (
       <div>
 
-            <NavbarHome/>
+            <BusinessBar/>
+            <FormBulls/>
 
       </div>
     )

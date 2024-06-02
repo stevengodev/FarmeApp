@@ -46,7 +46,7 @@ const FormBulls = () => {
 
   return (
     <div>
-      <h1>Registro de Vacas</h1>
+      <h1>Registro de Toros</h1>
       <Form>
         <Form.Group controlId="formName">
           <Form.Label>Nombre</Form.Label>
@@ -89,16 +89,16 @@ const FormBulls = () => {
           />
         </Form.Group>
         <Form.Group controlId="formIsDeted">
-          <Form.Label>¿Eliminada?</Form.Label>
+          <Form.Label>Imagen</Form.Label>
           <Form.Control
-            type="text"
+            type="file"
             name="IsDeted"
             value={newCow.IsDeted}
             onChange={handleChange}
           />
         </Form.Group>
-        <Button variant="primary" onClick={handleAddCow}>
-          Agregar Vaca
+        <Button variant="primary" type='submit'  onClick={handleAddCow}>
+          Agregar toro
         </Button>
       </Form>
       <Table striped bordered hover>
@@ -108,7 +108,7 @@ const FormBulls = () => {
             <th>Raza</th>
             <th>Fecha de Nacimiento</th>
             <th>ID de Granja</th>
-            <th>¿Eliminada?</th>
+            <th>Imagen</th>
             <th>Acciones</th>
           </tr>
         </thead>
@@ -121,10 +121,17 @@ const FormBulls = () => {
               <td>{cow.Farm_Id}</td>
               <td>{cow.IsDeted}</td>
               <td>
+                <Button variant="primary">
+                  Editar
+                </Button>
+              </td>
+
+              <td>
                 <Button variant="danger" onClick={() => handleDeleteCow(index)}>
                   Eliminar
                 </Button>
               </td>
+
             </tr>
           ))}
         </tbody>

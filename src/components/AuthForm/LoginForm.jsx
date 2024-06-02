@@ -5,6 +5,7 @@ import AlertMessages from '../AlertMessages/AlertMessages.jsx';
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../assets/styles/login.css';
+import axios from 'axios';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
@@ -55,7 +56,7 @@ const LoginForm = () => {
 
   return (
     <div className={isDarkMode ? 'dark-mode' : ''}>
-      
+
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="email" className="form-label">Correo electrónico:</label>

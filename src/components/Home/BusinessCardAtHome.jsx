@@ -4,6 +4,7 @@ import vaca1 from '../../assets/img/vaca1.jpg';
 import vaca2 from '../../assets/img/vaca2.jpg';
 import vaca3 from '../../assets/img/vaca3.jpg';
 import "../../assets/styles/home.css"
+import { Link } from 'react-router-dom';
 
 const BusinessCardAtHome = () => {
 
@@ -56,9 +57,13 @@ const BusinessCardAtHome = () => {
                         </div>
                     </div>
                 </div>
+
                 <div class="aladerecha">
-                    <a href="" class="botones  boton-verde">ver todas</a>
+                    <li className="nav-item">
+                        <Link className="nav-link botones  boton-verde" to="/farms-list">Ver todas</Link>
+                    </li>
                 </div>
+
             </main>
         </>
     );

@@ -111,7 +111,7 @@ const FormCows = () => {
             onChange={handleChange}
           />
         </Form.Group>
-        <Button variant="primary" onClick={handleAddCow}>
+        <Button variant="primary"  type='submit' onClick={handleAddCow}>
           Agregar Vaca
         </Button>
       </Form>

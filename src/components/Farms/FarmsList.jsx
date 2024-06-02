@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Card, Spinner } from 'react-bootstrap';
 import vaca1 from '../../assets/img/vaca1.jpg';
+import BusinessBar  from '../../components/BuisnessBar/Buisnessbar';
 
 const FarmsList = () => {
   const [farms, setFarms] = useState([]);
@@ -45,6 +46,12 @@ const FarmsList = () => {
   }
 
   return (
+
+    <>
+
+<BusinessBar/>
+
+
     <Container className="mt-4">
       <Row>
         {farms.map((farm) => (
@@ -66,6 +73,7 @@ const FarmsList = () => {
         ))}
       </Row>
     </Container>
+    </>
   );
 };
 

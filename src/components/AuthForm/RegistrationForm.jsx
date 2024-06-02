@@ -5,6 +5,7 @@ import { auth } from "../../services/firebase.js";
 import AlertMessages from '../AlertMessages/AlertMessages.jsx';
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import axios from 'axios';
 
 
 const RegistrationForm = () => {
@@ -24,7 +25,9 @@ const RegistrationForm = () => {
       console.log(userCredential)
       alert("Usuario creado correctamente")
 
-      //Redirigir
+      const userId = userCredential.user.uid;
+
+      navigate(`/business-registration/${userId}`);
 
       // Redirigir a la página deseada después del registro exitoso
     } catch (error) {
