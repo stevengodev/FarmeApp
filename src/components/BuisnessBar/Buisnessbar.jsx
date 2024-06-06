@@ -9,40 +9,20 @@ const BusinessBar = () => {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-light">
       <div className="container-fluid">
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-         
-            <li className="nav-item">
-              <button className="nav-link" onClick={() => handleNavigate('/employee-list')}>Empleados</button>
-            </li>
-            <li className="nav-item">
-              <button className="nav-link" onClick={() => handleNavigate('/task-list')}>Tareas</button>
-            </li>
-            <li className="nav-item">
-              <button className="nav-link" onClick={() => handleNavigate('/cows')}>Vacas</button>
-            </li>
-            <li className="nav-item">
-              <button className="nav-link" onClick={() => handleNavigate('/bulls')}>Toros</button>
-            </li>
-            <li className="nav-item">
-              <button className="nav-link" onClick={() => handleNavigate('/cowBabies')}>Terneros</button>
-            </li>
-            
-            <li className="nav-item">
-              <button className="nav-link" onClick={() => handleNavigate('/products-list')}>Productos</button>
-            </li>
-          
-            <li className="nav-item">
-              <button className="nav-link" onClick={() => handleNavigate('/')}>Volver</button>
-            </li>
-          </ul>
+        <div>
+          <button className="btn btn-outline-primary" style={{fontSize:'16px', marginRight: '10px'}}  onClick={() => handleNavigate('/employee-list')}>Empleados</button>
+          <button className="btn btn-outline-primary" style={{fontSize:'16px', marginRight: '10px'}} onClick={() => handleNavigate('/task-list')}>Tareas</button>
+          <button className="btn btn-outline-primary" style={{fontSize:'16px', marginRight: '10px'}} onClick={() => handleNavigate('/cows')}>Vacas</button>
+          <button className="btn btn-outline-primary" style={{fontSize:'16px', marginRight: '10px'}} onClick={() => handleNavigate('/bulls')}>Toros</button>
+          <button className="btn btn-outline-primary" style={{fontSize:'16px', marginRight: '10px'}} onClick={() => handleNavigate('/cowBabies')}>Terneros</button>
         </div>
       </div>
+
     </nav>
   );
 };

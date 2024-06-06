@@ -2,8 +2,16 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { fetchFarmById } from '../../services/ApiFarms.js'; // Ajusta la ruta según tu estructura de proyecto
 import 'bootstrap/dist/css/bootstrap.min.css';
-import BusinessBar  from '../../components/BuisnessBar/Buisnessbar.jsx';
-const BusinessInfoListData = () => {
+import NavBarBusiness from './NavBarBusiness.jsx';
+
+
+const BusinessInfoPage = () => {
+
+  useEffect(() => {
+    // Cambiar el título de la pestaña
+    document.title = 'Informacion del negocio';
+  }, []); // Esto se ejecutará cada vez que el título cambie
+
   const [farm, setFarm] = useState(null);
   const [error, setError] = useState(null); // Añadir estado para manejar errores
   const navigate = useNavigate();
@@ -44,8 +52,8 @@ const BusinessInfoListData = () => {
   }
 
   return (
-    <div>
-      <BusinessBar/>
+    <>
+      <NavBarBusiness/>
       <div className="container py-5">
         <div className="row">
           <div className="col-md-8 mx-auto">
@@ -81,8 +89,8 @@ const BusinessInfoListData = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
-export default BusinessInfoListData;
+export default BusinessInfoPage;

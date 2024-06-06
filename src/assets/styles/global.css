@@ -86,7 +86,7 @@
     background-color: #dc3545; /* Rojo */
 }
 
-button[type="submit"], .btn-emparejamiento {
+button[type="submit"], button[type="reset"], .btn-emparejamiento {
     color: white;
     border: none;
     padding: 10px 20px;
@@ -99,3 +99,40 @@ button[type="submit"], .btn-emparejamiento {
     border-radius: 4px;
     transition: background-color 0.3s ease;
   }
+
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .page-item {
+    margin: 0 10px;
+  }
+  
+  .page-link {
+    color: #007bff;
+    text-decoration: none;
+    border: 1px solid #dee2e6;
+    padding: 8px 16px; /* Ajusta el espaciado vertical y horizontal */
+    border-radius: 5px;
+    font-size: 16px; /* Ajusta el tamaño de fuente */
+  }
+  
+  .page-link:hover {
+    background-color: #f8f9fa;
+  }
+  
+  .page-item.active .page-link {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+  }
+  
+  .page-item.disabled .page-link {
+    color: #6c757d;
+    pointer-events: none;
+  }
+  

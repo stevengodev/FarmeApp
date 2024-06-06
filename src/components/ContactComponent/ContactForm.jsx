@@ -66,6 +66,8 @@ const ContactForm = () => {
         />
       </div>
       <button type="submit" className="btn btn-primary">Enviar</button>
+      <button type="reset" className="btn btn-secondary">Cancelar</button>
+
     </form>
   );
 };

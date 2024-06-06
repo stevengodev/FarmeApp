@@ -3,7 +3,32 @@ import { Button, Form, Table } from 'react-bootstrap';
 import '../../assets/styles/global.css'
 
 const CowBabiesForm = () => {
-  const [matingRecords, setMatingRecords] = useState([]);
+  const [matingRecords, setMatingRecords] = useState([{
+    MatingDate: '2024-06-01',
+    BirthDate: '2024-12-01',
+    Name: 'Vaca 1',
+    Cows_Id: '1',
+    Bulls_Id: '101',
+    Breed_Id: '1'
+  },
+  {
+    MatingDate: '2024-06-05',
+    BirthDate: '2024-12-05',
+    Name: 'Vaca 2',
+    Cows_Id: '2',
+    Bulls_Id: '102',
+    Breed_Id: '2'
+  },
+  {    MatingDate: '2024-06-05',
+    BirthDate: '2024-12-05',
+    Name: 'Vaca 3',
+    Cows_Id: '2',
+    Bulls_Id: '102',
+    Breed_Id: '2'
+  }
+]);
+
+
   const [newRecord, setNewRecord] = useState({
     MatingDate: '',
     BirthDate: '',
@@ -47,7 +72,6 @@ const CowBabiesForm = () => {
 
   return (
     <div>
-      <h1>Registro de Terneros</h1>
       <Form>
         <Form.Group controlId="formName">
           <Form.Label>Nombre</Form.Label>
@@ -108,12 +132,19 @@ const CowBabiesForm = () => {
           />
         </Form.Group>
 
-        <Button variant="primary" className='btn-emparejamiento' onClick={handleAddRecord}>
+          <div style={{marginTop: '20px'}} >
+          <Button variant="primary" className='btn-emparejamiento' onClick={handleAddRecord}>
           Agregar Emparejamiento
         </Button>
 
+        <Button variant="secondary" className='btn btn-secondary' type='reset'>
+          Cancelar
+        </Button>
+          </div>
+
+
       </Form>
-      <Table striped bordered hover>
+      <Table striped bordered hover style={{marginTop: '20px'}} >
         <thead>
           <tr>
             <th>Nombre</th>
@@ -135,7 +166,12 @@ const CowBabiesForm = () => {
               <td>{record.Cows_Id}</td>
               <td>{record.Bulls_Id}</td>
               <td>
-                <Button variant="danger" onClick={() => handleDeleteRecord(index)}>
+
+              <Button variant="primary" className='editar' style={{marginRight: '10px'}} >
+                  Editar
+                </Button>
+
+                <Button variant="danger" className='eliminar' onClick={() => handleDeleteRecord(index)}>
                   Eliminar
                 </Button>
               </td>
@@ -143,6 +179,17 @@ const CowBabiesForm = () => {
           ))}
         </tbody>
       </Table>
+
+      <nav aria-label="Page navigation example">
+  <ul className="pagination">
+    <li className="page-item disabled"><a className="page-link" href="#">Previous</a></li>
+    <li className="page-item"><a className="page-link" href="#">1</a></li>
+    <li className="page-item"><a className="page-link" href="#">2</a></li>
+    <li className="page-item"><a className="page-link" href="#">3</a></li>
+    <li className="page-item"><a className="page-link" href="#">Next</a></li>
+  </ul>
+</nav>
+
     </div>
   );
 };

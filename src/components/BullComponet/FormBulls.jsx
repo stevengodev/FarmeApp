@@ -46,7 +46,6 @@ const FormBulls = () => {
 
   return (
     <div>
-      <h1>Registro de Toros</h1>
       <Form>
         <Form.Group controlId="formName">
           <Form.Label>Nombre</Form.Label>
