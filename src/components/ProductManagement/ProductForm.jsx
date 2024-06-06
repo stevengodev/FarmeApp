@@ -20,8 +20,6 @@ const ProductForm = ({ onSubmit }) => {
 
   return (
     <div>
-      <h2>Add Product</h2>
-
       <form onSubmit={handleSubmit}>
 
         <div class="form-group">
@@ -41,12 +39,14 @@ const ProductForm = ({ onSubmit }) => {
             </div>
 
         <div className="mb-3">
-          <label htmlFor="price" className="form-label">Price</label>
+          <label htmlFor="price" className="form-label">Precio</label>
           <input type="number" className="form-control" id="price" value={price} onChange={(e) => setPrice(e.target.value)} required />
         </div>
 
 
-        <button type="submit" className="btn btn-primary">Add Product</button>
+        <button type="submit" className="btn btn-primary">Agregar</button>
+        <button type="reset" className="btn btn-secondary">Cancelar</button>
+
       </form>
     </div>
   );

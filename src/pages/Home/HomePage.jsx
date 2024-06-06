@@ -11,11 +11,9 @@ const HomePage = () => {
     <div>
       <NavbarHome/>
       <PresentationImage/>
-
       <BusinessCardAtHome />
       <ContactoHome />
-
-      < AccessibilityButton />
+      <AccessibilityButton />
     </div>
   );
 };

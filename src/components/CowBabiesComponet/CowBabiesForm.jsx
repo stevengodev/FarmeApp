@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Form, Table } from 'react-bootstrap';
 import '../../assets/styles/global.css'
+import Pagination from '../Pagination/Pagination';
 
 const CowBabiesForm = () => {
   const [matingRecords, setMatingRecords] = useState([{
@@ -19,14 +20,15 @@ const CowBabiesForm = () => {
     Bulls_Id: '102',
     Breed_Id: '2'
   },
-  {    MatingDate: '2024-06-05',
+  {
+    MatingDate: '2024-06-05',
     BirthDate: '2024-12-05',
     Name: 'Vaca 3',
     Cows_Id: '2',
     Bulls_Id: '102',
     Breed_Id: '2'
   }
-]);
+  ]);
 
 
   const [newRecord, setNewRecord] = useState({
@@ -132,19 +134,19 @@ const CowBabiesForm = () => {
           />
         </Form.Group>
 
-          <div style={{marginTop: '20px'}} >
+        <div style={{ marginTop: '20px' }} >
           <Button variant="primary" className='btn-emparejamiento' onClick={handleAddRecord}>
-          Agregar Emparejamiento
-        </Button>
+            Agregar Emparejamiento
+          </Button>
 
-        <Button variant="secondary" className='btn btn-secondary' type='reset'>
-          Cancelar
-        </Button>
-          </div>
+          <Button variant="secondary" className='btn btn-secondary' type='reset'>
+            Cancelar
+          </Button>
+        </div>
 
 
       </Form>
-      <Table striped bordered hover style={{marginTop: '20px'}} >
+      <Table striped bordered hover style={{ marginTop: '20px' }} >
         <thead>
           <tr>
             <th>Nombre</th>
@@ -167,7 +169,7 @@ const CowBabiesForm = () => {
               <td>{record.Bulls_Id}</td>
               <td>
 
-              <Button variant="primary" className='editar' style={{marginRight: '10px'}} >
+                <Button variant="primary" className='editar' style={{ marginRight: '10px' }} >
                   Editar
                 </Button>
 
@@ -180,15 +182,7 @@ const CowBabiesForm = () => {
         </tbody>
       </Table>
 
-      <nav aria-label="Page navigation example">
-  <ul className="pagination">
-    <li className="page-item disabled"><a className="page-link" href="#">Previous</a></li>
-    <li className="page-item"><a className="page-link" href="#">1</a></li>
-    <li className="page-item"><a className="page-link" href="#">2</a></li>
-    <li className="page-item"><a className="page-link" href="#">3</a></li>
-    <li className="page-item"><a className="page-link" href="#">Next</a></li>
-  </ul>
-</nav>
+          <Pagination/>
 
     </div>
   );

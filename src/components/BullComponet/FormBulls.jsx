@@ -4,7 +4,14 @@ import { useNavigate } from 'react-router-dom';
 
 const FormBulls = () => {
   const navigate = useNavigate();
-  const [cows, setCows] = useState([]);
+  const [cows, setCows] = useState([
+    { Name: 'Toro1', Breed_Id: '1', BirthDate: '2023-01-01', Farm_Id: '1', IsDeted: 'Yes' },
+  { Name: 'Toro2', Breed_Id: '2', BirthDate: '2022-05-15', Farm_Id: '2', IsDeted: 'No' },
+  { Name: 'Toro3', Breed_Id: '3', BirthDate: '2021-11-30', Farm_Id: '1', IsDeted: 'Yes' }
+  ]);
+
+
+
   const [newCow, setNewCow] = useState({
     Name: '',
     BirthDate: '',
@@ -120,13 +127,10 @@ const FormBulls = () => {
               <td>{cow.Farm_Id}</td>
               <td>{cow.IsDeted}</td>
               <td>
-                <Button variant="primary">
+                <Button variant="primary" className='editar' style={{marginRight:'10px'}}>
                   Editar
                 </Button>
-              </td>
-
-              <td>
-                <Button variant="danger" onClick={() => handleDeleteCow(index)}>
+                <Button variant="danger" className='eliminar' onClick={() => handleDeleteCow(index)}>
                   Eliminar
                 </Button>
               </td>

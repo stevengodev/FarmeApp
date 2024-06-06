@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Form, Table } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import Pagination from '../Pagination/Pagination';
 
 const FormCows = () => {
   const navigate = useNavigate();
-  const [cows, setCows] = useState([]);
+  const [cows, setCows] = useState([
+
+    { Name: 'Vaca 1', Breed_Id: '1', Photo: 'https://example.com/vaca1.jpg', DateBirth: '2023-01-01', Farm_Id: '1', Description: 'vaca de raza Holstein' },
+  { Name: 'Vaca 2', Breed_Id: '2', Photo: 'https://example.com/vaca2.jpg', DateBirth: '2022-05-15', Farm_Id: '2', Description: 'vaca de raza Jersey' },
+  { Name: 'Vaca 3', Breed_Id: '3', Photo: 'https://example.com/vaca3.jpg', DateBirth: '2021-11-30', Farm_Id: '1', Description: 'vaca de raza Angus' },
+
+  ]);
   const [newCow, setNewCow] = useState({
     Name: '',
     Photo: '',
@@ -137,7 +144,13 @@ const FormCows = () => {
               <td>{cow.Farm_Id}</td>
               <td>{cow.Description}</td>
               <td>
-                <Button variant="danger" onClick={() => handleDeleteCow(index)}>
+
+              <Button variant="primary" className='editar'>
+                  Editar
+                </Button>
+
+
+                <Button variant="danger" className='eliminar' onClick={() => handleDeleteCow(index)}>
                   Eliminar
                 </Button>
               </td>
@@ -145,6 +158,9 @@ const FormCows = () => {
           ))}
         </tbody>
       </Table>
+
+          <Pagination/>
+
     </div>
   );
 };

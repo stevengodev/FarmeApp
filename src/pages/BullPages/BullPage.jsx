@@ -1,9 +1,9 @@
-import StaffList from "../../components/StaffRegistrationForm/StaffList";
 import { useNavigate } from 'react-router-dom';
 import FormBulls from "../../components/BullComponet/FormBulls";
 import BusinessBar from '../../components/BuisnessBar/Buisnessbar';
 import NavbarGlobal from "../../components/Navbar/NavBarGlobal";
 import React, { useEffect } from 'react';
+import Pagination from '../../components/Pagination/Pagination';
 
 const BullPage = () => {
 
@@ -24,6 +24,9 @@ const BullPage = () => {
       <h1>Registro de Toros</h1>
       <BusinessBar />
       <FormBulls />
+
+      <Pagination/>
+
     </div>
   )
 

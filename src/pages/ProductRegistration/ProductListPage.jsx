@@ -1,29 +1,33 @@
 import ProductList from "../../components/ProductManagement/ProductList"
 import { useNavigate } from 'react-router-dom';
-
+import React, { useEffect } from 'react';
 import ProductForm from "../../components/ProductManagement/ProductForm"
-import BusinessBar  from '../../components/BuisnessBar/Buisnessbar';
+import BusinessBar from '../../components/BuisnessBar/Buisnessbar';
+import NavbarGlobal from "../../components/Navbar/NavBarGlobal";
 
 const ProductListPage = () => {
-    const navigate = useNavigate();
 
-    const handleNavigate = (ruta) => {
-      navigate(ruta);
-    };
+  useEffect(() => {
+    // Cambiar el título de la pestaña
+    document.title = 'Lista de productos';
+  }, []); // Esto se ejecutará cada vez que el título cambie
 
-    return <>
-    
-    <h2>Lista de productos</h2>
+  const navigate = useNavigate();
 
-        <div>
-             <BusinessBar/>
-             <ProductForm />
-              
-          </div>
+  const handleNavigate = (ruta) => {
+    navigate(ruta);
+  };
 
-    < ProductList />
+  return <>
 
-    </>
+    <NavbarGlobal />
+
+    <h2>Productos</h2>
+    <BusinessBar />
+    <ProductForm />
+    <ProductList />
+
+  </>
 
 }
 
