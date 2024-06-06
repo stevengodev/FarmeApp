@@ -4,6 +4,7 @@ import BusinessCardAtHome from '../../components/Home/BusinessCardAtHome';
 import ContactoHome from '../../components/Home/ContactoHome';
 import NavbarHome from '../../components/Home/NavBarHome';
 import PresentationImage from '../../components/Home/PresentationImage';
+import AccessibilityButton from '../../components/Accessibility/AccessibilityButton';
 const HomePage = () => {
 
   return (
@@ -13,6 +14,8 @@ const HomePage = () => {
 
       <BusinessCardAtHome />
       <ContactoHome />
+
+      < AccessibilityButton />
     </div>
   );
 };
