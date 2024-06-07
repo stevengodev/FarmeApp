@@ -174,15 +174,16 @@ const StaffList = () => {
           />
         </div>
         <div className="form-group">
-          <input
-            type="password"
-            className="form-control"
-            name="password"
-            placeholder="Contraseña"
-            value={staffForm.Password}
-            onChange={handleInputChange}
-            required
-          />
+        <input
+          type="password"
+          className="form-control"
+          name="Password" // Cambia "password" por "Password"
+          placeholder="Contraseña"
+          value={staffForm.Password}
+          onChange={handleInputChange}
+          required
+        />
+
         </div>
         <div className="form-group">
           <input
