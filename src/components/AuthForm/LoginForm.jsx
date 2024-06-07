@@ -5,12 +5,14 @@ import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../assets/styles/login.css';
 import { useAuth } from './AuthContext'; // Importa el contexto
+import CustomAlert from '../CustomAlert/CustomAlert.jsx';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [alertMessage, setAlertMessage] = useState(null);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [alertVariant, setAlertVariant] = useState('success');
 
   const navigate = useNavigate();
   const { setUserId } = useAuth(); // Usa el contexto
@@ -23,7 +25,22 @@ const LoginForm = () => {
       const userId = userCredentials.user.uid;
       setUserId(userId); // Actualiza el userId en el contexto
 
-      navigate(`/business-registration/${userId}`);
+      // Guardar el userId en localStorage
+      localStorage.setItem('userId', JSON.stringify({ userId }));
+
+      // Para recuperar el userId desde localStorage
+      const storedUser = JSON.parse(localStorage.getItem('userId'));
+      const userIdLocalStorage = storedUser ? storedUser.userId : null;
+      console.log('Recovered userId:', userIdLocalStorage);
+
+      setAlertMessage("Inicio de sesion correctamente");
+      setAlertVariant('success');
+
+      setTimeout(() => {
+        navigate(`/business-registration/${userId}`);
+      }, 2000); // Espera 2 segundos antes de redirigir
+
+      // navigate(`/business-registration/${userId}`);
     } catch (error) {
       let message;
       let type;
@@ -47,12 +64,22 @@ const LoginForm = () => {
           break;
       }
 
-      setAlertMessage({ type, message });
+      setAlertMessage("Credenciales incorrectas");
+      setAlertVariant('danger');
     }
   };
 
   return (
     <div className={isDarkMode ? 'dark-mode' : ''}>
+
+      {alertMessage && (
+        <CustomAlert
+          message={alertMessage}
+          variant={alertVariant}
+          onClose={() => setAlertMessage(null)}
+        />
+      )}
+
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="email" className="form-label">Correo electrónico:</label>

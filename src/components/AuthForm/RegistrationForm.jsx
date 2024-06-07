@@ -5,13 +5,14 @@ import { auth } from "../../services/firebase.js";
 import AlertMessages from '../AlertMessages/AlertMessages.jsx';
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import axios from 'axios';
+import CustomAlert from '../CustomAlert/CustomAlert.jsx';
 
 
 const RegistrationForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [alertMessage, setAlertMessage] = useState(null);
+  const [alertVariant, setAlertVariant] = useState('success');
 
   // Usa useNavigate para obtener la función de navegación
   const navigate = useNavigate();
@@ -23,13 +24,28 @@ const RegistrationForm = () => {
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password)
       console.log(userCredential)
-      alert("Usuario creado correctamente")
 
       const userId = userCredential.user.uid;
 
-      navigate(`/business-registration/${userId}`);
+      // navigate(`/business-registration/${userId}`);
 
       // Redirigir a la página deseada después del registro exitoso
+
+            // Guardar el userId en localStorage
+            localStorage.setItem('userId', JSON.stringify({ userId }));
+
+            // Para recuperar el userId desde localStorage
+            const storedUser = JSON.parse(localStorage.getItem('userId'));
+            const userIdLocalStorage = storedUser ? storedUser.userId : null;
+            console.log('Recovered userId:', userIdLocalStorage);
+      
+            setAlertMessage("Usuario creado correctamente");
+            setAlertVariant('success');
+      
+            setTimeout(() => {
+              navigate(`/business-registration/${userId}`);
+            }, 2000); // Espera 2 segundos antes de redirigir
+
     } catch (error) {
 
       let message;
@@ -54,7 +70,9 @@ const RegistrationForm = () => {
           break;
       }
 
-      setAlertMessage({ type, message });
+      setAlertMessage("Credenciales incorrectas");
+      setAlertVariant('danger');
+
     }
 
     console.log('Registrar usuario con:', { email, password });
@@ -63,7 +81,14 @@ const RegistrationForm = () => {
   return (
 
     <div>
-      {alertMessage && <AlertMessages type={alertMessage.type} message={alertMessage.message} />}
+
+      {alertMessage && (
+        <CustomAlert
+          message={alertMessage}
+          variant={alertVariant}
+          onClose={() => setAlertMessage(null)}
+        />
+      )}
 
       <form onSubmit={handleSubmit}>
         <div className="mb-3">

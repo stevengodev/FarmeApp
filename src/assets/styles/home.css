@@ -207,6 +207,7 @@ html{
     .contenido-contacto{
         flex: 1;
         color: white;
+        margin: 20px;
     }
     
     .contendido-contacto p{

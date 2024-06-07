@@ -15,7 +15,7 @@ const AuthForm = () => {
 
   return (
     <div className="container mt-5">
-           <NavbarHome/>
+      <NavbarHome />
 
       <div className="card">
         <div className="card-body">
