@@ -3,6 +3,7 @@ import React, { useEffect, useState, useReducer } from 'react';
 import { cartReducer, initialCartState, showHTML }  from '../../utils/carrito';
 // src/components/Carrito.js
 import vaca1 from '../../assets/img/vaca2.jpg'
+import NavbarGlobal from '../../components/Navbar/NavBarGlobal.jsx';
 
 import styled from 'styled-components';
 
@@ -102,7 +103,8 @@ const Store = () => {
     return (
         <>
             <header>
-                <h1>Bienvenido a Nuestra tienda</h1>
+
+                <NavbarGlobal/>
 
                 <div className="container-icon">
                     <div className="container-cart-icon">

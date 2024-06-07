@@ -1,21 +1,25 @@
-import TaskRegister  from "../../pages/TaskRegistration/TaskRegister";
-
-import TaskList from "../../components/TaskRegistrationForm/TaskList";
-import BusinessBar  from '../../components/BuisnessBar/Buisnessbar';
+import React, { useContext } from 'react';
+import { useParams } from 'react-router-dom';
+import TaskRegister from '../../pages/TaskRegistration/TaskRegister';
+import NavbarGlobal from '../../components/Navbar/NavBarGlobal';
+import TaskList from '../../components/TaskRegistrationForm/TaskList';
+import BusinessBar from '../../components/BuisnessBar/Buisnessbar';
+import { AuthContext } from '../../components/AuthForm/AuthContext'; // Importa el contexto de autenticación
 
 const TaskListPage = () => {
-    return (
-      <div>
-                <BusinessBar/>
+  const { userId: paramUserId } = useParams();
+  const { userId: contextUserId } = useContext(AuthContext);
 
-       < TaskRegister/>
-        <h1>Listado de tareas</h1>
+  const userId = paramUserId || contextUserId;
 
-        <TaskList/>
-
-      </div>
-    )
-  
+  return (
+    <div>
+      <NavbarGlobal />
+      <BusinessBar userId={userId} />
+      <h1>Listado de tareas</h1>
+      <TaskList />
+    </div>
+  );
 }
 
 export default TaskListPage;

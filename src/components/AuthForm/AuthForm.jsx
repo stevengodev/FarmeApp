@@ -4,6 +4,7 @@ import LoginForm from './LoginForm';
 import RegistrationForm from './RegistrationForm';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../assets/styles/global.css';
+import NavbarHome from '../../components/Home/NavBarHome';
 
 const AuthForm = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -14,6 +15,8 @@ const AuthForm = () => {
 
   return (
     <div className="container mt-5">
+           <NavbarHome/>
+
       <div className="card">
         <div className="card-body">
           <h2 className="card-title">{isLogin ? 'Inicio de Sesión' : 'Registro'}</h2>

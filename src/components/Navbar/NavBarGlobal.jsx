@@ -41,10 +41,10 @@ const NavbarGlobal = () => {
                                     </div>
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
-                                    <Dropdown.Item href="#" className="dropdown-item">Negocio</Dropdown.Item>
-                                    <Dropdown.Item href="#" className="dropdown-item">Tareas</Dropdown.Item>
-                                    <Dropdown.Item href="#" className="dropdown-item">Empleados</Dropdown.Item>
-                                    <Dropdown.Item href="#" className="dropdown-item">Configuracion</Dropdown.Item>
+                                    <Dropdown.Item href="/" className="dropdown-item">Negocio</Dropdown.Item>
+                                    <Dropdown.Item href="/" className="dropdown-item">Tareas</Dropdown.Item>
+                                    <Dropdown.Item href="/" className="dropdown-item">Empleados</Dropdown.Item>
+                                    <Dropdown.Item href="/" className="dropdown-item">Configuracion</Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>
                         </li>
@@ -58,8 +58,8 @@ const NavbarGlobal = () => {
                                     </div>
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
-                                    <Dropdown.Item href="#" className="dropdown-item">Sobre nosotros</Dropdown.Item>
-                                    <Dropdown.Item href="#" className="dropdown-item">Contacto</Dropdown.Item>
+                                    <Dropdown.Item href="/" className="dropdown-item">Sobre nosotros</Dropdown.Item>
+                                    <Dropdown.Item href="/" className="dropdown-item">Contacto</Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>
                         </li>
@@ -73,10 +73,9 @@ const NavbarGlobal = () => {
                                     </div>
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
-                                    <Dropdown.Item href="#" className="dropdown-item">Toros</Dropdown.Item>
-                                    <Dropdown.Item href="#" className="dropdown-item">Vacas</Dropdown.Item>
-                                    <Dropdown.Item href="#" className="dropdown-item">Terneros</Dropdown.Item>
-                                    <Dropdown.Item href="#" className="dropdown-item">Tienda</Dropdown.Item>
+                                    <Dropdown.Item href="/store" className="dropdown-item">Toros</Dropdown.Item>
+                                    <Dropdown.Item href="/store" className="dropdown-item">Vacas</Dropdown.Item>
+                                    <Dropdown.Item href="/store" className="dropdown-item">Terneros</Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>
                         </li>
@@ -90,10 +89,10 @@ const NavbarGlobal = () => {
                                     </div>
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
-                                    <Dropdown.Item href="#" className="dropdown-item">Preguntas frecuentes</Dropdown.Item>
-                                    <Dropdown.Item href="#" className="dropdown-item">Información de envíos</Dropdown.Item>
-                                    <Dropdown.Item href="#" className="dropdown-item">Política de devoluciones</Dropdown.Item>
-                                    <Dropdown.Item href="#" className="dropdown-item">Términos y condiciones</Dropdown.Item>
+                                    <Dropdown.Item href="/" className="dropdown-item">Preguntas frecuentes</Dropdown.Item>
+                                    <Dropdown.Item href="/" className="dropdown-item">Información de envíos</Dropdown.Item>
+                                    <Dropdown.Item href="/" className="dropdown-item">Política de devoluciones</Dropdown.Item>
+                                    <Dropdown.Item href="/" className="dropdown-item">Términos y condiciones</Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>
                         </li>

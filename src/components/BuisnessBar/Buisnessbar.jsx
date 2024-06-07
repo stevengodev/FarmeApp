@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const BusinessBar = () => {
+  const userId = "V4DzKkpyyuMpvEr4tYiQ1tCnynJ3"; // Hardcoded userId
   const navigate = useNavigate();
 
   const handleNavigate = (ruta) => {
@@ -15,14 +16,13 @@ const BusinessBar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div>
-          <button className="btn btn-outline-primary" style={{fontSize:'16px', marginRight: '10px'}}  onClick={() => handleNavigate('/employee-list')}>Empleados</button>
-          <button className="btn btn-outline-primary" style={{fontSize:'16px', marginRight: '10px'}} onClick={() => handleNavigate('/task-list')}>Tareas</button>
-          <button className="btn btn-outline-primary" style={{fontSize:'16px', marginRight: '10px'}} onClick={() => handleNavigate('/cows')}>Vacas</button>
-          <button className="btn btn-outline-primary" style={{fontSize:'16px', marginRight: '10px'}} onClick={() => handleNavigate('/bulls')}>Toros</button>
-          <button className="btn btn-outline-primary" style={{fontSize:'16px', marginRight: '10px'}} onClick={() => handleNavigate('/cowBabies')}>Terneros</button>
+          <button className="btn btn-outline-primary" style={{fontSize:'16px', marginRight: '10px'}} onClick={() => handleNavigate(`/employee-list/${userId}`)}>Empleados</button>
+          <button className="btn btn-outline-primary" style={{fontSize:'16px', marginRight: '10px'}} onClick={() => handleNavigate(`/task-list/${userId}`)}>Tareas</button>
+          <button className="btn btn-outline-primary" style={{fontSize:'16px', marginRight: '10px'}} onClick={() => handleNavigate(`/cows/${userId}`)}>Vacas</button>
+          <button className="btn btn-outline-primary" style={{fontSize:'16px', marginRight: '10px'}} onClick={() => handleNavigate(`/bulls/${userId}`)}>Toros</button>
+          <button className="btn btn-outline-primary" style={{fontSize:'16px', marginRight: '10px'}} onClick={() => handleNavigate(`/cowBabies/${userId}`)}>Terneros</button>
         </div>
       </div>
-
     </nav>
   );
 };

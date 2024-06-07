@@ -18,7 +18,7 @@ const FarmForm = () => {
 
     <NavBarBusiness/>
     <BusinessForm/>
-  
+
   </>
 };
 

@@ -104,7 +104,7 @@ const NavbarHome = () => {
                                     <Dropdown.Toggle variant="link" id="navbarDropdownMenuLink2" className="dropdown-toggle">
                                         <div className="dropdown-content">
                                             <i class="fa-solid fa-right-to-bracket"></i>
-                                            <span className="text">Iniciar sesion</span>
+                                             <a href="/login">Iniciar Sesion</a>
                                         </div>
                                     </Dropdown.Toggle>
                                 </Dropdown>
