@@ -74,8 +74,8 @@ const NavbarGlobal = () => {
                                     </div>
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
-                                    <Dropdown.Item href="/" className="dropdown-item">Sobre nosotros</Dropdown.Item>
-                                    <Dropdown.Item href="/" className="dropdown-item">Contacto</Dropdown.Item>
+                                    <Dropdown.Item onClick={() => handleNavigate(`/contact`)} className="dropdown-item">Sobre nosotros</Dropdown.Item>
+                                    <Dropdown.Item onClick={() => handleNavigate(`/contact`)} className="dropdown-item">Contacto</Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>
                         </li>
@@ -89,10 +89,10 @@ const NavbarGlobal = () => {
                                     </div>
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
-                                    <Dropdown.Item href="/store" className="dropdown-item">Toros</Dropdown.Item>
-                                    <Dropdown.Item href="/store" className="dropdown-item">Vacas</Dropdown.Item>
-                                    <Dropdown.Item href="/store" className="dropdown-item">Terneros</Dropdown.Item>
-                                    <Dropdown.Item href="/" className="dropdown-item">Tienda</Dropdown.Item>
+                                    <Dropdown.Item onClick={() => handleNavigate(`/bulls/${userId}`)} className="dropdown-item">Toros</Dropdown.Item>
+                                    <Dropdown.Item onClick={() => handleNavigate(`/cows/${userId}`)} className="dropdown-item">Vacas</Dropdown.Item>
+                                    <Dropdown.Item onClick={() => handleNavigate(`/cowBabies/${userId}`)} className="dropdown-item">Terneros</Dropdown.Item>
+                                    <Dropdown.Item onClick={() => handleNavigate(`/store`)} className="dropdown-item">Tienda</Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>
                         </li>

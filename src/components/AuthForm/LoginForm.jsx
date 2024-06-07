@@ -5,7 +5,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useAuth } from './AuthContext'; // Importa el contexto
 import CustomAlert from '../CustomAlert/CustomAlert.jsx';
 import { Link, useNavigate } from 'react-router-dom';
-import NavbarGlobal from '../Navbar/NavBarGlobal.jsx';
 import NavbarHome from '../Home/NavBarHome.jsx';
 import AccessibilityButton from '../Accessibility/AccessibilityButton.jsx';
 

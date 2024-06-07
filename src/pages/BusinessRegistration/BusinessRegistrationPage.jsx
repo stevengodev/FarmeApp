@@ -14,9 +14,6 @@ const FarmForm = () => {
 
   return <>
     <NavbarGlobal/>
-
-    <h1>Registrar finca / negocio</h1>
-
     <NavBarBusiness/>
     <BusinessForm/>
     <AccessibilityButton />

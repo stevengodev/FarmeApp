@@ -43,6 +43,7 @@ function App() {
           <Route path="/product-create/:userId" element={<ProductRegistration />} />
           <Route path="/preferences/:userId" element={<Preferences />} />
           <Route path="/farms-list/:userId" element={<FarmsListPage />} />
+          
         </Routes>
       </Router>
       <Footer />

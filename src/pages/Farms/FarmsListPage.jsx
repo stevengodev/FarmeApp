@@ -9,13 +9,13 @@ const FarmsListPage = () => {
 
     useEffect(() => {
         // Cambiar el título de la pestaña
-        document.title = 'Lista de negocios';
+        document.title = 'Negocios';
     }, []); // Esto se ejecutará cada vez que el título cambie
 
     return <>
 
         <NavbarGlobal />
-        <h1>Lista de negocios</h1>
+        <h1>Negocios</h1>
         <FarmsList />
         <Pagination/>
         <AccessibilityButton />

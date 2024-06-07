@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchFarmsByUserId } from '../../services/ApiFarms';
 import StaffService from '../../services/ApiStaff';
+import AccessibilityButton from '../Accessibility/AccessibilityButton';
 
 const StaffList = () => {
   const { userId } = useParams(); // Assuming the URL contains the userId parameter
@@ -121,14 +122,16 @@ const StaffList = () => {
   };
 
   return (
-    <div className="container mt-5">
+    <>
       <h3 className="mb-4">Registrar nuevo empleado</h3>
-
-      <div className="form-group mb-3">
-        <label htmlFor="farmSelect">Seleccionar Finca</label>
+      <div className="container">
+  <div className="row">
+    <div className="col-md-6">
+      <div className="mb-3">
+        <label htmlFor="farmSelect" className="form-label">Seleccionar Finca</label>
         <select 
           id="farmSelect" 
-          className="form-control" 
+          className="form-select" 
           value={selectedFarmId} 
           onChange={handleFarmChange}
         >
@@ -139,89 +142,102 @@ const StaffList = () => {
           ))}
         </select>
       </div>
-
-     
+    </div>
+    <div className="col-md-6">
       <form onSubmit={handleFormSubmit} className="mb-4">
-
-      <label>Nombre completo</label>
-
-        <div className="form-group">
-          <input
-            type="text"
-            className="form-control"
-            name="Name"
-            placeholder="Steven David"
-            value={staffForm.Name}
-            onChange={handleInputChange}
-            required
-          />
+        <div className="row">
+          <div className="col-md-6">
+            <div className="mb-3">
+              <label htmlFor="Name" className="form-label">Nombre completo</label>
+              <input
+                type="text"
+                className="form-control"
+                name="Name"
+                placeholder="Steven David"
+                value={staffForm.Name}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="mb-3">
+              <label htmlFor="BirthDate" className="form-label">Fecha de nacimiento</label>
+              <input
+                type="date"
+                className="form-control"
+                name="BirthDate"
+                value={staffForm.BirthDate}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+          </div>
         </div>
-
-        <label>Fecha de nacimiento</label>
-
-        <div className="form-group">
-          <input
-            type="date"
-            className="form-control"
-            name="BirthDate"
-            value={staffForm.BirthDate}
-            onChange={handleInputChange}
-            required
-          />
+        <div className="row">
+          <div className="col-md-6">
+            <div className="mb-3">
+              <label htmlFor="Username" className="form-label">Nombre de Usuario</label>
+              <input
+                type="text"
+                className="form-control"
+                name="Username"
+                placeholder="Steven"
+                value={staffForm.Username}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="mb-3">
+              <label htmlFor="Password" className="form-label">Contraseña</label>
+              <input
+                type="password"
+                className="form-control"
+                name="Password"
+                placeholder="12345678"
+                value={staffForm.Password}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+          </div>
         </div>
-
-        <label>Nombre de Usuario</label>
-        
-        <div className="form-group">
-          <input
-            type="text"
-            className="form-control"
-            name="Username"
-            placeholder="Steven"
-            value={staffForm.Username}
-            onChange={handleInputChange}
-            required
-          />
+        <div className="row">
+          <div className="col-md-6">
+            <div className="mb-3">
+              <label htmlFor="IdCardNumber" className="form-label">Numero de cedula</label>
+              <input
+                type="text"
+                className="form-control"
+                name="IdCardNumber"
+                placeholder="1102729152"
+                value={staffForm.IdCardNumber}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="mb-3 d-flex align-items-end">
+              <button type="submit" className="btn btn-primary me-2">
+                {editMode ? 'Actualizar' : 'Agregar'}
+              </button>
+              <button type="reset" className="btn btn-secondary">
+                Cancelar
+              </button>
+            </div>
+          </div>
         </div>
-
-        <label>Contraseña</label>
-
-        <div className="form-group">
-          <input
-            type="Password"
-            className="form-control"
-            name="Password"
-            placeholder="12345678"
-            value={staffForm.Password}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-
-        <label>Numero de cedula</label>
-
-        <div className="form-group" style={{marginBottom:'20px'}} >
-          <input
-            type="text"
-            className="form-control"
-            name="IdCardNumber"
-            placeholder="1102729152"
-            value={staffForm.IdCardNumber}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-
-        <button type="submit" className="btn btn-primary">
-          {editMode ? 'Actualizar' : 'Agregar'}
-        </button>
-
-        
-        <button type="reset" className="btn btn-secundary" style={{background:'gray'}}>
-          Cancelar
-        </button>
-
       </form>
+    </div>
+  </div>
+</div>
+
+
+
+          <h4>Empleados</h4>
 
       <div className="form-group mb-3">
         <input
@@ -268,7 +284,10 @@ const StaffList = () => {
           ))}
         </tbody>
       </table>
-    </div>
+
+          <AccessibilityButton/>
+
+      </>
   );
 };
 

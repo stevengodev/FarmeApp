@@ -14,11 +14,7 @@ const StaffListPage = () => {
     return (
       <div>
         <NavbarGlobal/>
-        <h1>Listado de empleados</h1>
-
         <BusinessBar/>
-
-
         <StaffList/>
 
       </div>

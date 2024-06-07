@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { createFarm, fetchFarmsByUserId, deleteFarm } from '../../services/ApiFarms.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import CustomAlert from '../../components/CustomAlert/CustomAlert.jsx';
 
 const FarmForm = () => {
   const { userId } = useParams(); // Get the user ID from the URL
@@ -15,6 +16,10 @@ const FarmForm = () => {
     OwnerId: '',
     OwnerBirthDate: '' // Ensure the key name is correct
   });
+
+  const [alertMessage, setAlertMessage] = useState(null);
+  const [alertVariant, setAlertVariant] = useState('success');
+
   const [farms, setFarms] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -52,6 +57,23 @@ const FarmForm = () => {
       await createFarm(farmData);
       const fetchedFarms = await fetchFarmsByUserId(userId); // Refresh the farms list
       setFarms(fetchedFarms);
+
+      // Mostrar la alerta
+
+      setAlertMessage("La granja se ha guardado correctamente");
+      setAlertVariant("success");
+
+      // Limpiar los valores de los inputs
+      setFormData({
+        Name: '',
+        Location: '',
+        OwnerName: '',
+        OwnerLastname: '',
+        OwnerId: '',
+        OwnerBirthDate: '',
+        PhoneNumber: '',
+      });
+
     } catch (error) {
       console.error('Error creating farm:', error);
     }
@@ -70,31 +92,44 @@ const FarmForm = () => {
 
   return (
     <>
+
+      <h3>Registrar negocio</h3>
+
+      {alertMessage && (
+        <CustomAlert
+          message={alertMessage}
+          variant={alertVariant}
+          onClose={() => setAlertMessage(null)}
+        />
+      )}
+
       <form onSubmit={handleSubmit}>
-        <div className="mb-3">
-          <label htmlFor="Name" className="form-label">Nombre:</label>
-          <input
-            type="text"
-            className="form-control"
-            id="Name"
-            name="Name"
-            value={formData.Name}
-            onChange={handleChange}
-          />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="Location" className="form-label">Ubicación:</label>
-          <input
-            type="text"
-            className="form-control"
-            id="Location"
-            name="Location"
-            value={formData.Location}
-            onChange={handleChange}
-          />
+        <div className="row mb-3">
+          <div className="col-md-6">
+            <label htmlFor="Name" className="form-label">Nombre:</label>
+            <input
+              type="text"
+              className="form-control"
+              id="Name"
+              name="Name"
+              value={formData.Name}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="col-md-6">
+            <label htmlFor="Location" className="form-label">Ubicación:</label>
+            <input
+              type="text"
+              className="form-control"
+              id="Location"
+              name="Location"
+              value={formData.Location}
+              onChange={handleChange}
+            />
+          </div>
         </div>
 
-        
+
         <div className="mb-3">
           <label htmlFor="PhoneNumber" className="form-label">Teléfono:</label>
           <input
@@ -104,52 +139,61 @@ const FarmForm = () => {
             name="PhoneNumber"
             value={formData.PhoneNumber}
             onChange={handleChange}
+            style={{ maxWidth: "590px" }} // Ajusta el máximo ancho según sea necesario
           />
         </div>
-        <div className="mb-3">
-          <label htmlFor="OwnerName" className="form-label">Nombre del Propietario:</label>
-          <input
-            type="text"
-            className="form-control"
-            id="OwnerName"
-            name="OwnerName"
-            value={formData.OwnerName}
-            onChange={handleChange}
-          />
+
+        <div className="row mb-3">
+          <div className="col-md-6">
+            <label htmlFor="OwnerName" className="form-label">Nombre del Propietario:</label>
+            <input
+              type="text"
+              className="form-control"
+              id="OwnerName"
+              name="OwnerName"
+              value={formData.OwnerName}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="col-md-6">
+            <label htmlFor="OwnerLastname" className="form-label">Apellido del Propietario:</label>
+            <input
+              type="text"
+              className="form-control"
+              id="OwnerLastname"
+              name="OwnerLastname"
+              value={formData.OwnerLastname}
+              onChange={handleChange}
+            />
+          </div>
         </div>
-        <div className="mb-3">
-          <label htmlFor="OwnerLastname" className="form-label">Apellido del Propietario:</label>
-          <input
-            type="text"
-            className="form-control"
-            id="OwnerLastname"
-            name="OwnerLastname"
-            value={formData.OwnerLastname}
-            onChange={handleChange}
-          />
+
+
+        <div className="row mb-3">
+          <div className="col-md-6">
+            <label htmlFor="OwnerId" className="form-label">ID del Propietario:</label>
+            <input
+              type="text"
+              className="form-control"
+              id="OwnerId"
+              name="OwnerId"
+              value={formData.OwnerId}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="col-md-6">
+            <label htmlFor="OwnerBirthDate" className="form-label">Fecha de Nacimiento del Propietario:</label>
+            <input
+              type="date"
+              className="form-control"
+              id="OwnerBirthDate"
+              name="OwnerBirthDate"
+              value={formData.OwnerBirthDate}
+              onChange={handleChange}
+            />
+          </div>
         </div>
-        <div className="mb-3">
-          <label htmlFor="OwnerId" className="form-label">ID del Propietario:</label>
-          <input
-            type="text"
-            className="form-control"
-            id="OwnerId"
-            name="OwnerId"
-            value={formData.OwnerId}
-            onChange={handleChange}
-          />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="OwnerBirthDate" className="form-label">Fecha de Nacimiento del Propietario:</label>
-          <input
-            type="date"
-            className="form-control"
-            id="OwnerBirthDate"
-            name="OwnerBirthDate"
-            value={formData.OwnerBirthDate} // Ensure the correct key is used
-            onChange={handleChange}
-          />
-        </div>
+
         <button type="submit" className="btn btn-primary">Crear Granja</button>
         <button type="reset" className="btn btn-secondary">Cancelar</button>
       </form>
@@ -182,7 +226,7 @@ const FarmForm = () => {
                 <td>{`${farm.OwnerName} ${farm.OwnerLastname}`}</td>
                 <td>{farm.OwnerBirthDate}</td>
                 <td>
-                  <button className="btn btn-warning editar" style={{marginRight:'10px'}} onClick={() => navigate(`/edit-farm/${farm.Id}`)}>Editar</button>
+                  <button className="btn btn-warning editar" style={{ marginRight: '10px' }} onClick={() => navigate(`/edit-farm/${farm.Id}`)}>Editar</button>
                   <button className="btn btn-danger eliminar" onClick={() => handleDelete(farm.Id)}>Eliminar</button>
                 </td>
               </tr>
