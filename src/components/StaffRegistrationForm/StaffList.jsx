@@ -10,6 +10,8 @@ const StaffList = () => {
   const [staff, setStaff] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredStaff, setFilteredStaff] = useState([]);
+
+
   const [staffForm, setStaffForm] = useState({
     Name: '',
     BirthDate: '',
@@ -120,7 +122,7 @@ const StaffList = () => {
 
   return (
     <div className="container mt-5">
-      <h1 className="mb-4">Administrador de Staff</h1>
+      <h3 className="mb-4">Registrar nuevo empleado</h3>
 
       <div className="form-group mb-3">
         <label htmlFor="farmSelect">Seleccionar Finca</label>
@@ -140,65 +142,87 @@ const StaffList = () => {
 
      
       <form onSubmit={handleFormSubmit} className="mb-4">
+
+      <label>Nombre completo</label>
+
         <div className="form-group">
           <input
             type="text"
             className="form-control"
             name="Name"
-            placeholder="Nombre Completo"
+            placeholder="Steven David"
             value={staffForm.Name}
             onChange={handleInputChange}
             required
           />
         </div>
+
+        <label>Fecha de nacimiento</label>
+
         <div className="form-group">
           <input
             type="date"
             className="form-control"
             name="BirthDate"
-            placeholder="Fecha de nacimiento"
             value={staffForm.BirthDate}
             onChange={handleInputChange}
             required
           />
         </div>
+
+        <label>Nombre de Usuario</label>
+        
         <div className="form-group">
           <input
             type="text"
             className="form-control"
             name="Username"
-            placeholder="Nombre de Usuario"
+            placeholder="Steven"
             value={staffForm.Username}
             onChange={handleInputChange}
             required
           />
         </div>
+
+        <label>Contraseña</label>
+
         <div className="form-group">
           <input
-            type="password"
+            type="Password"
             className="form-control"
-            name="password"
-            placeholder="Contraseña"
+            name="Password"
+            placeholder="12345678"
             value={staffForm.Password}
             onChange={handleInputChange}
             required
           />
         </div>
-        <div className="form-group">
+
+        <label>Numero de cedula</label>
+
+        <div className="form-group" style={{marginBottom:'20px'}} >
           <input
             type="text"
             className="form-control"
             name="IdCardNumber"
-            placeholder="Número de Cedula"
+            placeholder="1102729152"
             value={staffForm.IdCardNumber}
             onChange={handleInputChange}
             required
           />
         </div>
+
         <button type="submit" className="btn btn-primary">
-          {editMode ? 'Update Staff' : 'Add Staff'}
+          {editMode ? 'Actualizar' : 'Agregar'}
         </button>
+
+        
+        <button type="reset" className="btn btn-secundary" style={{background:'gray'}}>
+          Cancelar
+        </button>
+
       </form>
+
       <div className="form-group mb-3">
         <input
           type="text"
@@ -228,13 +252,13 @@ const StaffList = () => {
               <td>{staffMember.IdCardNumber}</td>
               <td>
                 <button 
-                  className="btn btn-secondary btn-sm mr-2" 
+                  className="btn btn-secondary editar btn-sm mr-2" style={{marginRight: '10px'}} 
                   onClick={() => handleEditClick(staffMember)}
                 >
-                  Cambiar contraseña
+                 Editar
                 </button>
                 <button 
-                  className="btn btn-danger btn-sm" 
+                  className="btn btn-danger btn-sm eliminar"  
                   onClick={() => handleDeleteClick(staffMember.Id)}
                 >
                   Eliminar

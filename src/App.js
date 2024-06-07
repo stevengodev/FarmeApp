@@ -3,7 +3,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HomePage from './pages/Home/HomePage';
 import BusinessRegistrationPage from './pages/BusinessRegistration/BusinessRegistrationPage';
-import AuthForm from './components/AuthForm/AuthForm';
 import Footer from './components/Footer/Footer';
 import StaffRegistrationPage from './pages/StaffRegistration/StaffRegistrationPage';
 import ProductListPage from './pages/ProductRegistration/ProductListPage';
@@ -18,6 +17,8 @@ import ContactPage from './pages/ContactPage/ContactPage';
 import Preferences from './pages/UserPreferences/Preferences';
 import FarmsListPage from './pages/Farms/FarmsListPage';
 import { AuthProvider } from './components/AuthForm/AuthContext'; // Importa el contexto
+import RegistrationForm from './components/AuthForm/RegistrationForm';
+import LoginForm from './components/AuthForm/LoginForm';
 
 function App() {
   return (
@@ -26,8 +27,11 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/business-registration/:userId" element={<BusinessRegistrationPage />} />
-          <Route path="/login" element={<AuthForm />} />
-          <Route path="/staff-registration/:userId" element={<StaffRegistrationPage />} />
+          {/* <Route path="/login" element={<AuthForm />} /> */}
+          <Route path="/login" element={<LoginForm />} />
+          <Route path="/register" element={<RegistrationForm />} />
+
+          {/* <Route path="/staff-registration/:userId" element={<StaffRegistrationPage />} /> */}
           <Route path="/products-list/:userId" element={<ProductListPage />} />
           <Route path="/task-list/:userId" element={<TaskListPage />} />
           <Route path="/employee-list/:userId" element={<StaffListPage />} />

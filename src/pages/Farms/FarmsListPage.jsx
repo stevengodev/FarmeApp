@@ -3,8 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import FarmsList from '../../components/Farms/FarmsList';
 import NavbarGlobal from "../../components/Navbar/NavBarGlobal";
 import Pagination from '../../components/Pagination/Pagination'
-
-
+import AccessibilityButton from '../../components/Accessibility/AccessibilityButton';
 
 const FarmsListPage = () => {
 
@@ -19,6 +18,7 @@ const FarmsListPage = () => {
         <h1>Lista de negocios</h1>
         <FarmsList />
         <Pagination/>
+        <AccessibilityButton />
 
     </>
 

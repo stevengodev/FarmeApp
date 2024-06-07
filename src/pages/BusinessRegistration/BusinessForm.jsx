@@ -93,6 +93,8 @@ const FarmForm = () => {
             onChange={handleChange}
           />
         </div>
+
+        
         <div className="mb-3">
           <label htmlFor="PhoneNumber" className="form-label">Teléfono:</label>
           <input
@@ -180,8 +182,8 @@ const FarmForm = () => {
                 <td>{`${farm.OwnerName} ${farm.OwnerLastname}`}</td>
                 <td>{farm.OwnerBirthDate}</td>
                 <td>
-                  <button className="btn btn-warning" onClick={() => navigate(`/edit-farm/${farm.Id}`)}>Editar</button>
-                  <button className="btn btn-danger" onClick={() => handleDelete(farm.Id)}>Eliminar</button>
+                  <button className="btn btn-warning editar" style={{marginRight:'10px'}} onClick={() => navigate(`/edit-farm/${farm.Id}`)}>Editar</button>
+                  <button className="btn btn-danger eliminar" onClick={() => handleDelete(farm.Id)}>Eliminar</button>
                 </td>
               </tr>
             ))}

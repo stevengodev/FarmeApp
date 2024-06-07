@@ -1,11 +1,27 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { Dropdown } from 'react-bootstrap';
 import logo from '../../assets/img/logo2.png';
-import '../../assets/styles/home.css'; // Ajusta la ruta según la estructura de tu proyecto
+import '../../assets/styles/home.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const NavbarGlobal = () => {
+
+    const [userId, setUserId] = useState(null);
+
+    useEffect(() => {
+        const storedUser = JSON.parse(localStorage.getItem('userId'));
+        if (storedUser) {
+            setUserId(storedUser.userId);
+        }
+    }, []);
+
+    const navigate = useNavigate();
+
+    const handleNavigate = (ruta) => {
+        navigate(ruta);
+    };
+
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-body-tertiary">
             <div className="container-fluid">
@@ -41,10 +57,10 @@ const NavbarGlobal = () => {
                                     </div>
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
-                                    <Dropdown.Item href="/" className="dropdown-item">Negocio</Dropdown.Item>
-                                    <Dropdown.Item href="/" className="dropdown-item">Tareas</Dropdown.Item>
-                                    <Dropdown.Item href="/" className="dropdown-item">Empleados</Dropdown.Item>
-                                    <Dropdown.Item href="/" className="dropdown-item">Configuracion</Dropdown.Item>
+                                    <Dropdown.Item onClick={() => handleNavigate(`/business-registration/${userId}`)} className="dropdown-item">Negocio</Dropdown.Item>
+                                    <Dropdown.Item onClick={() => handleNavigate(`/task-list/${userId}`)} className="dropdown-item">Tareas</Dropdown.Item>
+                                    <Dropdown.Item onClick={() => handleNavigate(`/employee-list/${userId}`)} className="dropdown-item">Empleados</Dropdown.Item>
+                                    <Dropdown.Item onClick={() => handleNavigate(`/preferences/${userId}`)} className="dropdown-item">Configuracion</Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>
                         </li>
@@ -76,6 +92,7 @@ const NavbarGlobal = () => {
                                     <Dropdown.Item href="/store" className="dropdown-item">Toros</Dropdown.Item>
                                     <Dropdown.Item href="/store" className="dropdown-item">Vacas</Dropdown.Item>
                                     <Dropdown.Item href="/store" className="dropdown-item">Terneros</Dropdown.Item>
+                                    <Dropdown.Item href="/" className="dropdown-item">Tienda</Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>
                         </li>
