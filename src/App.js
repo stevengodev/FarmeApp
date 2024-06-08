@@ -19,19 +19,17 @@ import FarmsListPage from './pages/Farms/FarmsListPage';
 import { AuthProvider } from './components/AuthForm/AuthContext'; // Importa el contexto
 import RegistrationForm from './components/AuthForm/RegistrationForm';
 import LoginForm from './components/AuthForm/LoginForm';
+import FAQPage from './pages/Questions/FAQPage';
 
 function App() {
   return (
-    <AuthProvider> {/* Envolvemos la aplicación con AuthProvider */}
+    <AuthProvider>
       <Router>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/business-registration/:userId" element={<BusinessRegistrationPage />} />
-          {/* <Route path="/login" element={<AuthForm />} /> */}
           <Route path="/login" element={<LoginForm />} />
           <Route path="/register" element={<RegistrationForm />} />
-
-          {/* <Route path="/staff-registration/:userId" element={<StaffRegistrationPage />} /> */}
           <Route path="/products-list/:userId" element={<ProductListPage />} />
           <Route path="/task-list/:userId" element={<TaskListPage />} />
           <Route path="/employee-list/:userId" element={<StaffListPage />} />
@@ -43,7 +41,8 @@ function App() {
           <Route path="/product-create/:userId" element={<ProductRegistration />} />
           <Route path="/preferences/:userId" element={<Preferences />} />
           <Route path="/farms-list/:userId" element={<FarmsListPage />} />
-          
+          <Route path="/questions" element={<FAQPage />} />
+
         </Routes>
       </Router>
       <Footer />

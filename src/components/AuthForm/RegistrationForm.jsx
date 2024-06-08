@@ -134,14 +134,14 @@ const RegistrationForm = () => {
           <div className="row gx-lg-5 align-items-center mb-5">
             <div className="col-lg-6 mb-5 mb-lg-0" style={{ zIndex: 10 }}>
               <h1 className="my-5 display-5 fw-bold ls-tight" style={{ color: "hsl(218, 81%, 95%)" }}>
-                The best offer <br />
-                <span style={{ color: "hsl(218, 81%, 75%)" }}>for your business</span>
+                La mejor oferta <br />
+                <span style={{ color: "hsl(218, 81%, 75%)" }}>para tu negocio</span>
               </h1>
               <p className="mb-4 opacity-70" style={{ color: "hsl(218, 81%, 85%)" }}>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Temporibus, expedita iusto veniam atque, magni tempora mollitia
-                dolorum consequatur nulla, neque debitis eos reprehenderit quasi
-                ab ipsum nisi dolorem modi. Quos?
+              Bienvenido a nuestra plataforma, donde gestionamos todas las necesidades de tu finca en un solo lugar.
+                Desde el registro de tus animales hasta el control de la producción, te ayudamos a optimizar tu trabajo
+                diario. Facilita la administración de tu finca y maximiza tu productividad con nuestras herramientas avanzadas.
+              
               </p>
             </div>
   

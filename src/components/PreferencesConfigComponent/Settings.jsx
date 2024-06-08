@@ -216,6 +216,10 @@ const Settings = () => {
         <Button variant="primary" type='submit' onClick={handleSave}>
           Guardar Configuraciones
         </Button>
+
+        <Button variant="secundary" type='reset' style={{background:'gray'}} >
+          Cancelar
+        </Button>
       </Form>
     </Container>
   );
