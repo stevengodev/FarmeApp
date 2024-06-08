@@ -22,7 +22,6 @@ const ContactPage = () => {
     return (
       <div>
             <NavbarGlobal/>        
-            <h1>Contacto</h1>
             <BusinessBar/>
             <ContactForm />
       </div>

@@ -107,10 +107,10 @@ const NavbarHome = () => {
                                     </div>
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
-                                    <Dropdown.Item href="/" className="dropdown-item">Preguntas frecuentes</Dropdown.Item>
-                                    <Dropdown.Item href="/" className="dropdown-item">Información de envíos</Dropdown.Item>
-                                    <Dropdown.Item href="/" className="dropdown-item">Política de devoluciones</Dropdown.Item>
-                                    <Dropdown.Item href="/" className="dropdown-item">Términos y condiciones</Dropdown.Item>
+                                    <Dropdown.Item href="/questions" className="dropdown-item">Preguntas frecuentes</Dropdown.Item>
+                                    <Dropdown.Item href="/questions" className="dropdown-item">Información de envíos</Dropdown.Item>
+                                    <Dropdown.Item href="/questions" className="dropdown-item">Política de devoluciones</Dropdown.Item>
+                                    <Dropdown.Item href="/questions" className="dropdown-item">Términos y condiciones</Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>
                         </li>

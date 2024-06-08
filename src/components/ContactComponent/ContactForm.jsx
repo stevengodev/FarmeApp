@@ -30,30 +30,34 @@ const ContactForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="container mt-5">
-      <div className="mb-3">
-        <label htmlFor="name" className="form-label">Nombre:</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          className="form-control"
-          required
-        />
-      </div>
-      <div className="mb-3">
-        <label htmlFor="email" className="form-label">Correo electrónico:</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          className="form-control"
-          required
-        />
-      </div>
+
+      <h3>Contacto</h3>
+<div className="row">
+  <div className="col-md-6 mb-3">
+    <label htmlFor="name" className="form-label">Nombre:</label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      value={formData.name}
+      onChange={handleChange}
+      className="form-control"
+      required
+    />
+  </div>
+  <div className="col-md-6 mb-3">
+    <label htmlFor="email" className="form-label">Correo electrónico:</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      value={formData.email}
+      onChange={handleChange}
+      className="form-control"
+      required
+    />
+  </div>
+</div>
       <div className="mb-3">
         <label htmlFor="message" className="form-label">Mensaje:</label>
         <textarea

@@ -20,6 +20,7 @@ import { AuthProvider } from './components/AuthForm/AuthContext'; // Importa el 
 import RegistrationForm from './components/AuthForm/RegistrationForm';
 import LoginForm from './components/AuthForm/LoginForm';
 import FAQPage from './pages/Questions/FAQPage';
+import AllFarms from './pages/Home/AllFarms';
 
 function App() {
   return (
@@ -42,6 +43,9 @@ function App() {
           <Route path="/preferences/:userId" element={<Preferences />} />
           <Route path="/farms-list/:userId" element={<FarmsListPage />} />
           <Route path="/questions" element={<FAQPage />} />
+
+          
+          <Route path="/farms-list" element={<AllFarms />} />
 
         </Routes>
       </Router>
