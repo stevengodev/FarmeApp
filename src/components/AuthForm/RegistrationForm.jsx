@@ -2,16 +2,18 @@
 import React, { useState } from 'react';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from "../../services/firebase.js";
-import AlertMessages from '../AlertMessages/AlertMessages.jsx';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import axios from 'axios';
+import CustomAlert from '../CustomAlert/CustomAlert.jsx';
+import NavbarHome from '../Home/NavBarHome.jsx';
+import AccessibilityButton from '../Accessibility/AccessibilityButton.jsx';
 
 
 const RegistrationForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [alertMessage, setAlertMessage] = useState(null);
+  const [alertVariant, setAlertVariant] = useState('success');
 
   // Usa useNavigate para obtener la función de navegación
   const navigate = useNavigate();
@@ -23,13 +25,28 @@ const RegistrationForm = () => {
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password)
       console.log(userCredential)
-      alert("Usuario creado correctamente")
 
       const userId = userCredential.user.uid;
 
-      navigate(`/business-registration/${userId}`);
+      // navigate(`/business-registration/${userId}`);
 
       // Redirigir a la página deseada después del registro exitoso
+
+            // Guardar el userId en localStorage
+            localStorage.setItem('userId', JSON.stringify({ userId }));
+
+            // Para recuperar el userId desde localStorage
+            const storedUser = JSON.parse(localStorage.getItem('userId'));
+            const userIdLocalStorage = storedUser ? storedUser.userId : null;
+            console.log('Recovered userId:', userIdLocalStorage);
+      
+            setAlertMessage("Usuario creado correctamente");
+            setAlertVariant('success');
+      
+            setTimeout(() => {
+              navigate(`/business-registration/${userId}`);
+            }, 2000); // Espera 2 segundos antes de redirigir
+
     } catch (error) {
 
       let message;
@@ -54,7 +71,9 @@ const RegistrationForm = () => {
           break;
       }
 
-      setAlertMessage({ type, message });
+      setAlertMessage("Credenciales incorrectas");
+      setAlertVariant('danger');
+
     }
 
     console.log('Registrar usuario con:', { email, password });
@@ -62,33 +81,127 @@ const RegistrationForm = () => {
 
   return (
 
-    <div>
-      {alertMessage && <AlertMessages type={alertMessage.type} message={alertMessage.message} />}
+    <>
 
-      <form onSubmit={handleSubmit}>
-        <div className="mb-3">
-          <label htmlFor="email" className="form-label">Correo Electrónico:</label>
-          <input
-            type="email"
-            className="form-control"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
+    <NavbarHome/>
+
+      <section className="background-radial-gradient overflow-hidden">
+        <style>
+          {`
+          .background-radial-gradient {
+            background-color: hsl(218, 41%, 15%);
+            background-image: radial-gradient(650px circle at 0% 0%,
+                hsl(218, 41%, 35%) 15%,
+                hsl(218, 41%, 30%) 35%,
+                hsl(218, 41%, 20%) 75%,
+                hsl(218, 41%, 19%) 80%,
+                transparent 100%),
+              radial-gradient(1250px circle at 100% 100%,
+                hsl(218, 41%, 45%) 15%,
+                hsl(218, 41%, 30%) 35%,
+                hsl(218, 41%, 20%) 75%,
+                hsl(218, 41%, 19%) 80%,
+                transparent 100%);
+          }
+  
+          #radius-shape-1 {
+            height: 220px;
+            width: 220px;
+            top: -60px;
+            left: -130px;
+            background: radial-gradient(#44006b, #ad1fff);
+            overflow: hidden;
+          }
+  
+          #radius-shape-2 {
+            border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
+            bottom: -60px;
+            right: -110px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(#44006b, #ad1fff);
+            overflow: hidden;
+          }
+  
+          .bg-glass {
+            background-color: hsla(0, 0%, 100%, 0.9) !important;
+            backdrop-filter: saturate(200%) blur(25px);
+          }
+        `}
+        </style>
+  
+        <div className="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+          <div className="row gx-lg-5 align-items-center mb-5">
+            <div className="col-lg-6 mb-5 mb-lg-0" style={{ zIndex: 10 }}>
+              <h1 className="my-5 display-5 fw-bold ls-tight" style={{ color: "hsl(218, 81%, 95%)" }}>
+                La mejor oferta <br />
+                <span style={{ color: "hsl(218, 81%, 75%)" }}>para tu negocio</span>
+              </h1>
+              <p className="mb-4 opacity-70" style={{ color: "hsl(218, 81%, 85%)" }}>
+              Bienvenido a nuestra plataforma, donde gestionamos todas las necesidades de tu finca en un solo lugar.
+                Desde el registro de tus animales hasta el control de la producción, te ayudamos a optimizar tu trabajo
+                diario. Facilita la administración de tu finca y maximiza tu productividad con nuestras herramientas avanzadas.
+              
+              </p>
+            </div>
+  
+            <div className="col-lg-6 mb-5 mb-lg-0 position-relative">
+              <div id="radius-shape-1" className="position-absolute rounded-circle shadow-5-strong"></div>
+              <div id="radius-shape-2" className="position-absolute shadow-5-strong"></div>
+  
+              <div className="card bg-glass">
+                <div className="card-body px-4 py-5 px-md-5">
+  
+                  {alertMessage && (
+                    <CustomAlert
+                      message={alertMessage}
+                      variant={alertVariant}
+                      onClose={() => setAlertMessage(null)}
+                    />
+                  )}
+  
+                  <form onSubmit={handleSubmit}>
+
+
+                    <h3>Registrarse</h3>
+
+                    <div className="mb-3">
+                      <label htmlFor="email" className="form-label">Correo Electrónico:</label>
+                      <input
+                        type="email"
+                        className="form-control"
+                        id="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                      />
+                    </div>
+                    <div className="mb-3">
+                      <label htmlFor="password" className="form-label">Contraseña:</label>
+                      <input
+                        type="password"
+                        className="form-control"
+                        id="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                      />
+                    </div>
+                    <button type="submit" className="btn btn-primary btn-block mb-4">Registrarse</button>
+  
+                    <div className="text-center">
+                      <p>¿Ya tienes una cuenta? <Link to="/login">Inicia sesión</Link></p>
+                    </div>
+                  </form>
+  
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="mb-3">
-          <label htmlFor="password" className="form-label">Contraseña:</label>
-          <input
-            type="password"
-            className="form-control"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <button type="submit" className="btn btn-primary">Registrarse</button>
-      </form>
-    </div>
+      </section>
+
+        <AccessibilityButton/>
+
+      </>
   );
 };
 

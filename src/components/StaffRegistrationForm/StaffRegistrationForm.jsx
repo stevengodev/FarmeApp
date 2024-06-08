@@ -42,7 +42,7 @@ const StaffRegistrationForm = () => {
                 />
             </div>
 
-            <div className="mb-3">
+        <div className="mb-3">
                 <label className="form-label">Contraseña</label>
                 <input
                     type="password"

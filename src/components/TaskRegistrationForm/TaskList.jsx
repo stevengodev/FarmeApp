@@ -110,82 +110,98 @@ const TaskList = () => {
 
   return (
     <div className="container mt-5">
-      <h1 className="mb-4">Asignación de Tarea</h1>
+      <h1 className="mb-4">Asignar Tarea</h1>
+
       <form onSubmit={handleSubmit}>
-        <div className="form-group mb-3">
-          <label htmlFor="farmSelect">Seleccionar Finca</label>
-          <select 
-            id="farmSelect" 
-            className="form-control" 
-            value={selectedFarmId} 
-            onChange={handleFarmChange}
-          >
-            {farms.map((farm) => (
-              <option key={farm.Id} value={farm.Id}>
-                {farm.Name}
-              </option>
-            ))}
-          </select>
+        <div className="container">
+          <div className="row">
+            <div className="col-md-6 mb-3">
+              <label htmlFor="farmSelect">Seleccionar Finca</label>
+              <select
+                id="farmSelect"
+                className="form-control"
+                value={selectedFarmId}
+                onChange={handleFarmChange}
+              >
+                {farms.map((farm) => (
+                  <option key={farm.Id} value={farm.Id}>
+                    {farm.Name}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div className="col-md-6 mb-3">
+              <label htmlFor="staffSelect">Seleccionar Personal</label>
+              <select
+                id="staffSelect"
+                className="form-control"
+                value={selectedStaffId}
+                onChange={handleStaffChange}
+              >
+                {staff.map((staffMember) => (
+                  <option key={staffMember.Id} value={staffMember.Id}>
+                    {staffMember.Name}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
         </div>
 
-        <div className="form-group mb-3">
-          <label htmlFor="staffSelect">Seleccionar Personal</label>
-          <select 
-            id="staffSelect" 
-            className="form-control" 
-            value={selectedStaffId} 
-            onChange={handleStaffChange}
-          >
-            {staff.map((staffMember) => (
-              <option key={staffMember.Id} value={staffMember.Id}>
-                {staffMember.Name}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <div className="form-group mb-3">
-          <label htmlFor="taskName">Nombre de la Tarea</label>
-          <input 
-            type="text" 
-            id="taskName" 
-            className="form-control" 
-            value={taskName} 
-            onChange={(e) => setTaskName(e.target.value)} 
-            required 
-          />
-        </div>
+        <div className="container">
+  <div className="row">
+    <div className="col-md-6 mb-3">
+      <div className="form-group">
+        <label htmlFor="taskName">Nombre de la Tarea</label>
+        <input
+          type="text"
+          id="taskName"
+          className="form-control"
+          value={taskName}
+          onChange={(e) => setTaskName(e.target.value)}
+          required
+        />
+      </div>
+    </div>
+    <div className="col-md-6 mb-3">
+      <div className="form-group">
+        <label htmlFor="taskStatus">Estado de la Tarea</label>
+        <select
+          id="taskStatus"
+          className="form-control"
+          value={taskStatus}
+          onChange={(e) => setTaskStatus(e.target.value)}
+          required
+        >
+          <option value="">Seleccionar Estado</option>
+          <option value="S">Comenzado</option>
+          <option value="P">En Proceso</option>
+          <option value="F">Terminado</option>
+          <option value="IP">En Problemas</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
 
         <div className="form-group mb-3">
           <label htmlFor="taskDescription">Descripción de la Tarea</label>
-          <textarea 
-            id="taskDescription" 
-            className="form-control" 
-            rows="3" 
-            value={taskDescription} 
-            onChange={(e) => setTaskDescription(e.target.value)} 
-            required 
+          <textarea
+            id="taskDescription"
+            className="form-control"
+            rows="3"
+            value={taskDescription}
+            onChange={(e) => setTaskDescription(e.target.value)}
+            required
           ></textarea>
         </div>
 
-        <div className="form-group mb-3">
-          <label htmlFor="taskStatus">Estado de la Tarea</label>
-          <select
-            id="taskStatus"
-            className="form-control"
-            value={taskStatus}
-            onChange={(e) => setTaskStatus(e.target.value)}
-            required
-          >
-            <option value="">Seleccionar Estado</option>
-            <option value="S">Comenzado</option>
-            <option value="P">En Proceso</option>
-            <option value="F">Terminado</option>
-            <option value="IP">En Problemas</option>
-          </select>
-        </div>
+
 
         <button type="submit" className="btn btn-primary">Asignar Tarea</button>
+        <button type="reset" className="btn btn-secundary" style={{ background: 'gray' }} >Cancelar</button>
+
       </form>
 
       <h2 className="mt-5">Tareas</h2>

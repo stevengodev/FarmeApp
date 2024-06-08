@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchFarmsByUserId } from '../../services/ApiFarms';
 import StaffService from '../../services/ApiStaff';
+import AccessibilityButton from '../Accessibility/AccessibilityButton';
 
 const StaffList = () => {
   const { userId } = useParams(); // Assuming the URL contains the userId parameter
@@ -10,6 +11,8 @@ const StaffList = () => {
   const [staff, setStaff] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredStaff, setFilteredStaff] = useState([]);
+
+
   const [staffForm, setStaffForm] = useState({
     Name: '',
     BirthDate: '',
@@ -119,14 +122,16 @@ const StaffList = () => {
   };
 
   return (
-    <div className="container mt-5">
-      <h1 className="mb-4">Administrador de Staff</h1>
-
-      <div className="form-group mb-3">
-        <label htmlFor="farmSelect">Seleccionar Finca</label>
+    <>
+      <h3 className="mb-4">Registrar nuevo empleado</h3>
+      <div className="container">
+  <div className="row">
+    <div className="col-md-6">
+      <div className="mb-3">
+        <label htmlFor="farmSelect" className="form-label">Seleccionar Finca</label>
         <select 
           id="farmSelect" 
-          className="form-control" 
+          className="form-select" 
           value={selectedFarmId} 
           onChange={handleFarmChange}
         >
@@ -137,69 +142,103 @@ const StaffList = () => {
           ))}
         </select>
       </div>
-
-     
+    </div>
+    <div className="col-md-6">
       <form onSubmit={handleFormSubmit} className="mb-4">
-        <div className="form-group">
-          <input
-            type="text"
-            className="form-control"
-            name="Name"
-            placeholder="Nombre Completo"
-            value={staffForm.Name}
-            onChange={handleInputChange}
-            required
-          />
+        <div className="row">
+          <div className="col-md-6">
+            <div className="mb-3">
+              <label htmlFor="Name" className="form-label">Nombre completo</label>
+              <input
+                type="text"
+                className="form-control"
+                name="Name"
+                placeholder="Steven David"
+                value={staffForm.Name}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="mb-3">
+              <label htmlFor="BirthDate" className="form-label">Fecha de nacimiento</label>
+              <input
+                type="date"
+                className="form-control"
+                name="BirthDate"
+                value={staffForm.BirthDate}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+          </div>
         </div>
-        <div className="form-group">
-          <input
-            type="date"
-            className="form-control"
-            name="BirthDate"
-            placeholder="Fecha de nacimiento"
-            value={staffForm.BirthDate}
-            onChange={handleInputChange}
-            required
-          />
+        <div className="row">
+          <div className="col-md-6">
+            <div className="mb-3">
+              <label htmlFor="Username" className="form-label">Nombre de Usuario</label>
+              <input
+                type="text"
+                className="form-control"
+                name="Username"
+                placeholder="Steven"
+                value={staffForm.Username}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="mb-3">
+              <label htmlFor="Password" className="form-label">Contraseña</label>
+              <input
+                type="password"
+                className="form-control"
+                name="Password"
+                placeholder="12345678"
+                value={staffForm.Password}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+          </div>
         </div>
-        <div className="form-group">
-          <input
-            type="text"
-            className="form-control"
-            name="Username"
-            placeholder="Nombre de Usuario"
-            value={staffForm.Username}
-            onChange={handleInputChange}
-            required
-          />
+        <div className="row">
+          <div className="col-md-6">
+            <div className="mb-3">
+              <label htmlFor="IdCardNumber" className="form-label">Numero de cedula</label>
+              <input
+                type="text"
+                className="form-control"
+                name="IdCardNumber"
+                placeholder="1102729152"
+                value={staffForm.IdCardNumber}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="mb-3 d-flex align-items-end">
+              <button type="submit" className="btn btn-primary me-2">
+                {editMode ? 'Actualizar' : 'Agregar'}
+              </button>
+              <button type="reset" className="btn btn-secondary">
+                Cancelar
+              </button>
+            </div>
+          </div>
         </div>
-        <div className="form-group">
-        <input
-          type="password"
-          className="form-control"
-          name="Password" // Cambia "password" por "Password"
-          placeholder="Contraseña"
-          value={staffForm.Password}
-          onChange={handleInputChange}
-          required
-        />
-
-        </div>
-        <div className="form-group">
-          <input
-            type="text"
-            className="form-control"
-            name="IdCardNumber"
-            placeholder="Número de Cedula"
-            value={staffForm.IdCardNumber}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-        <button type="submit" className="btn btn-primary">
-          {editMode ? 'Update Staff' : 'Add Staff'}
-        </button>
       </form>
+    </div>
+  </div>
+</div>
+
+
+
+          <h4>Empleados</h4>
+
       <div className="form-group mb-3">
         <input
           type="text"
@@ -229,13 +268,13 @@ const StaffList = () => {
               <td>{staffMember.IdCardNumber}</td>
               <td>
                 <button 
-                  className="btn btn-secondary btn-sm mr-2" 
+                  className="btn btn-secondary editar btn-sm mr-2" style={{marginRight: '10px'}} 
                   onClick={() => handleEditClick(staffMember)}
                 >
-                  Cambiar contraseña
+                 Editar
                 </button>
                 <button 
-                  className="btn btn-danger btn-sm" 
+                  className="btn btn-danger btn-sm eliminar"  
                   onClick={() => handleDeleteClick(staffMember.Id)}
                 >
                   Eliminar
@@ -245,7 +284,10 @@ const StaffList = () => {
           ))}
         </tbody>
       </table>
-    </div>
+
+          <AccessibilityButton/>
+
+      </>
   );
 };
 

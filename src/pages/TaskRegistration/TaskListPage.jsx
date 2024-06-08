@@ -5,6 +5,7 @@ import NavbarGlobal from '../../components/Navbar/NavBarGlobal';
 import TaskList from '../../components/TaskRegistrationForm/TaskList';
 import BusinessBar from '../../components/BuisnessBar/Buisnessbar';
 import { AuthContext } from '../../components/AuthForm/AuthContext'; // Importa el contexto de autenticación
+import AccessibilityButton from '../../components/Accessibility/AccessibilityButton';
 
 const TaskListPage = () => {
   const { userId: paramUserId } = useParams();
@@ -16,8 +17,8 @@ const TaskListPage = () => {
     <div>
       <NavbarGlobal />
       <BusinessBar userId={userId} />
-      <h1>Listado de tareas</h1>
       <TaskList />
+      <AccessibilityButton />
     </div>
   );
 }

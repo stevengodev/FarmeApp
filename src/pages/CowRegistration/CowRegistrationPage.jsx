@@ -2,6 +2,7 @@ import StaffList from "../../components/StaffRegistrationForm/StaffList";
 import { useNavigate } from 'react-router-dom';
 import BusinessBar  from '../../components/BuisnessBar/Buisnessbar';
 import FormCows from '../../components/CowComponent/FormCows';
+import NavbarGlobal from "../../components/Navbar/NavBarGlobal";
 
 const CowRegistrationPage = () => {
 
@@ -14,6 +15,7 @@ const CowRegistrationPage = () => {
     return (
       <div>
 
+            <NavbarGlobal/>
             <BusinessBar/>
             <FormCows />
 
